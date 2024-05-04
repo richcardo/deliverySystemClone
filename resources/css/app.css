@@ -1,0 +1,155 @@
+@import 'bootstrap';
+
+:root {
+    --bg-color: #f29101 ;
+    --bg-black: #1d1d1b;
+}
+.font-cabin{
+    font-family: "Cabin", sans-serif;
+    font-weight: 400;
+}
+body {
+    text-transform: uppercase;
+    color:var(--bg-color);
+    font-family: "Cabin", sans-serif;
+    font-weight: 400;
+}
+.bg-orange{
+    background-color:var(--bg-color) !important;
+}
+
+.text-orange{
+  color:var(--bg-color) !important;
+}
+
+.bg-nero {
+    background-color:var(--bg-black) !important;
+}
+
+.bg-nav{
+    background-color:#FFFFFF;
+}
+
+.itemNav {
+    background-color:transparent;
+
+}
+
+/*
+.itemNav:hover{
+    background-color: #1d1d1b;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+*/
+.itemNav {
+    border-top: solid 5px  transparent ;
+    border-bottom: solid 5px transparent ;
+}
+
+.itemNav:hover{
+    border-top: solid 5px  #1d1d1b ;
+    border-bottom: solid 5px  #1d1d1b ;
+    color: #1d1d1b !important;
+    transition-duration: 400ms;
+}
+
+.fixed{
+    position: sticky;
+    top: 0;
+}
+
+nav {
+  font-family: "Cabin", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  z-index: 1000;
+
+}
+
+.logo-size{
+    width:10%;
+    height:fit-content;
+    margin-right: 2%;
+}
+
+.card-style{
+    border-top: solid 5px  #1d1d1b ;
+    border-bottom: solid 5px  #1d1d1b ;
+}
+
+.btn-orange{
+    background-color: #1d1d1b;
+    color: #f29101;
+    padding: 0 2%;
+    text-transform: uppercase;
+    border-radius:5px;
+}
+.btn-orange:hover{
+    background-color: rgba(0, 0, 0, 0.8) ;
+    color: #f29101;
+    padding: 0 2%;
+    text-transform: uppercase;
+    border-radius:5px;
+}
+
+.uppercased{
+    text-transform: uppercase;
+}
+
+.menu{
+    height: 100vh;
+    position: sticky;
+    top: 77px;
+}
+.li-style{
+    padding: 4%;
+    background-color: transparent;
+    padding-right: 0;
+    margin-right: 0px;
+    margin-left: 50%;
+    min-width: fit-content;
+    margin-bottom: 30px;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.li.active{
+    padding: 4%;
+    background-color: #FFFFFF;
+    padding-right: 0;
+    margin-right: 0px;
+    margin-left: 50%;
+    min-width: fit-content;
+    margin-bottom: 30px;
+    border-radius: 100vw 0 0 100vw;
+}
+.li-style:hover{
+    padding: 4%;
+    background-color: #FFFFFF;
+    padding-right: 0;
+    margin-right: 0px;
+    margin-left: 50%;
+    min-width: fit-content;
+    margin-bottom: 30px;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.img-style-form{
+    width: 25%;
+    height: auto;
+    text-align: center;
+}
+
+.none{
+    display: none;
+}
+
+.alert-style-success{
+    background-color: var(--bg-black);
+    opacity: 0.8;
+}
+
+.card-size {
+    width: 50%;
+    height: auto;
+}
