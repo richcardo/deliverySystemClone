@@ -41,7 +41,7 @@
             <input id="fuel" name="fuel" class="form-control" type="number" min="0" step="1" value="{{ $rider->fuel }}">
         </div>
         <div class="mb-3">
-            <button class="btn-orange fs-4" type="submit">Aggiungi Rider</button>
+            <button class="btn-orange fs-4" type="submit">Modifica Rider</button>
         </div>
 
     </form>

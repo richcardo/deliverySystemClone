@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Rider;
+use Livewire\attributes\On;
 
 class RidersList extends Component
 {
@@ -13,6 +14,7 @@ class RidersList extends Component
     {
        $this->load();
     }
+
     #[On('load-riders')]
     public function load()
     {

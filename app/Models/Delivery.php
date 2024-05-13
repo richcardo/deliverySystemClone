@@ -11,6 +11,13 @@ class Delivery extends Model
 
     protected $fillable=['name','address','number','price','pos','rider_id'];
 
+    public static function list($input)
+    {
+        return Delivery::where('address', 'LIKE', "%$input%")->
+                        orWhere('name', 'LIKE', "%$input%")
+                        ->get();
+    }
+
     public function rider()
     {
         return $this->belongsTo(Rider::class);

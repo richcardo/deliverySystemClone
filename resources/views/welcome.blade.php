@@ -8,5 +8,9 @@
     </div>
     @endauth
 
+    <header>
+        <img src="{{ asset('/img')}}" alt="">
+    </header>
+
 
 </x-layout>

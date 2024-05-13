@@ -9,7 +9,7 @@ class Rider extends Model
 {
     use HasFactory;
 
-    protected $fillable=['name','surname','img','number','transport','fuel'];
+    protected $fillable=['name','surname','img','number','transport','fuel','total'];
 
     public function deliveries()
     {

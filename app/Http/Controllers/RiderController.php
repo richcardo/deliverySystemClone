@@ -18,6 +18,15 @@ class RiderController extends Controller
     public function update(StoreRiderRequest $request, Rider $rider)
     {
         $rider->update($request->all());
+        
+        $total=0;
+        foreach($rider->deliveries as $delivery){
+            if(!$delivery->pos){
+                $total = $total + $delivery->price;
+            }
+        }
+        $total = $total + (50- $rider->fuel);
+        $rider->update(['total'=>$total]);
 
         return redirect()->back()->with(['success'=>'Rider modificato correttamente!']);
     }
@@ -27,5 +36,25 @@ class RiderController extends Controller
         $rider->delete();
 
         return redirect()->back()->with(['success'=>'Rider Eliminato con successo!']);
+    }
+
+    public function profile(Rider $rider)
+    {
+
+        $total=0;
+        foreach($rider->deliveries as $delivery){
+
+             if($delivery->pos == false ){
+                $total= $total + $delivery->price;
+             }
+
+        }
+
+        $total= $total + ( 50 - $rider->fuel);
+           
+        return view('riders.profile', [
+            'rider' => $rider,
+            'total' => $total,
+        ]);
     }
 }

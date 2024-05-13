@@ -1,23 +1,10 @@
-<x-layout>
+<div>
+    <div class="mb-4 w-50">
+            <label class="form-label" for="">Cerca per Indirizzo o Nome</label>
+            <input class="form-control" wire:model.live="input" type="text">
+    </div>
 
-<div class="row justify-content-start px-0">
-        <x-menu-delivery/>
-        <div class="col-6 col-sm-6 col-md-6 m-5">
-                <div class="container">
-                        <div class="row justify-content-start">
-                                <div class="mb-3">
-                                        <h1>Elenco consegne</h1>
-                                        @if(session()->has('success'))
-                                        <div class="alert alert-style-success" role="alert">
-                                        {{ session('success') }}
-                                        </div>
-                                        @endif
-                                        <div class="d-flex m-2 justify-content-center">
-                                                <a class="btn-orange me-3 text-decoration-none" href="{{ route('delivery.create') }}">Aggiungi Consegna</a>
-                                                <a class="btn-orange me-3 text-decoration-none" href="{{ route('delivery.search') }}">Cerca Consegna</a>
-                                        </div>    
-                                </div>
-                                <table class="table">
+    <table class="table fs-5">
                                 <thead>
                                         <tr>
                                         <th class="col">Indirizzo</th>
@@ -34,7 +21,7 @@
                                         <tr class="text-orange">
                                                 <td class="text-orange">{{ $delivery->address}}</td>
                                                 <td>{{ $delivery->name }}</td>
-                                                <td>{{ Number::currency($delivery->price , in: 'EUR', locale: 'it') }}</td>
+                                                <td class="text-orange">{{ Number::currency($delivery->price , in: 'EUR', locale: 'it') }}</td>
                                                 <td>
                                                         @if($delivery->pos)
                                                                 <span class="badge text-bg-success">Si</span>
@@ -47,8 +34,8 @@
                                                 
                                                 <td>{{ $delivery->number }}</td>
                                                 <td>
-                                                        <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', [ 'delivery' => $delivery , 'condition'=>'delivery', 'rider'=> 0]) }}">modifica</a>
-                                                        <form class="d-inline" action="{{ route('delivery.destroy', $delivery ) }}" method="POST">
+                                                        <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', $delivery)}}">modifica</a>
+                                                        <form class="d-inline" action="{{ route('delivery.destroy', $delivery) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button class="btn btn-sm btn-danger uppercased" type="submit">elimina</button>
@@ -58,9 +45,4 @@
                                         @endforeach
                                 </tbody>
                                 </table>
-                        </div>
-                </div>
-        </div>
 </div>
-
-</x-layout>

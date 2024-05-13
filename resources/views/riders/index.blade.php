@@ -2,7 +2,7 @@
 
 <div class="row justify-content-start px-0">
             <x-menu-rider/>
-        <div class="col-12 col-sm-4 col-md-5 m-5">
+        <div class="col-8 col-sm-6 col-md-8 m-5">
             <div class="mb-5">
                 <h1>I tuoi Rider Preferiti</h1>
                 @if(session()->has('success'))

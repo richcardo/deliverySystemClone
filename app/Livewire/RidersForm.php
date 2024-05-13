@@ -30,23 +30,18 @@ class RidersForm extends Component
 
     public function create()
     {
-        $this->validate();
+            $this->validate();
 
-        if(!$this->rider_Id){
             $rider = Rider::create($this->only('name','surname', 'number', 'transport', 'fuel'));
 
-            session()->flash('success', 'Rider aggiunto!');
-        }
-        else {
-            $rider= Rider::where('id', $this->rider_Id);
-            $rider->update($this->only('name','surname', 'number', 'transport', 'fuel'));
-            session()->flash('success', 'Rider modificato correttamente!');
-            $this->resetValues();
+            $total = 50 - $rider->fuel;
+            $rider->update(['total'=> $total]);
+            
             $this->dispatch('load-riders');
-            redirect()->to('/riders/menu/index');
-        }
 
-        $this->resetValues();
+            session()->flash('success', 'Rider aggiunto!');
+
+            $this->resetValues();
     }
 
     public function resetValues()

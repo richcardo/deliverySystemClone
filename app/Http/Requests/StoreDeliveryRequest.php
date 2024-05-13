@@ -24,6 +24,7 @@ class StoreDeliveryRequest extends FormRequest
         return [
             'name'=>'required',
             'address' => 'required',
+            'number'=>'required',
             'price'=>'required',
         ];
     }
