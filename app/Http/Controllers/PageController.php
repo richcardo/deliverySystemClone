@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Rider;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PageController extends Controller
 {
@@ -34,5 +35,11 @@ class PageController extends Controller
             'users' => User::all(),
         ]
     );
+    }
+
+    public function setLanguage($lang){
+        session()->put('locale', $lang );
+        App::setlocale($lang);
+        return redirect()->back();
     }
 }

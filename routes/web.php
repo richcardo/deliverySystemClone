@@ -18,9 +18,10 @@ Route::get('/riders/menu/profile/{rider}',[RiderController::class, 'profile'])->
 
 Route::get('/deliveries/index', [DeliveryController::class, 'index'])->name('delivery.index');
 Route::get('deliveries/search', [DeliveryController::class, 'search'])->name('delivery.search');
-Route::get('/deliveries/create', [DeliveryController::Class, 'create'])->name('delivery.create');
+Route::get('/deliveries/create', [DeliveryController::class, 'create'])->name('delivery.create');
 Route::POST('/deliveries/store', [DeliveryController::class, 'store'])->name('delivery.store');
 Route::get('/deliveries/{delivery}/edit/{condition}/{rider}', [DeliveryController::class, 'edit'])->name('delivery.edit');
 Route::PUT('deliveries/{delivery}/update/{condition}/{rider2}', [DeliveryController::class, 'update'])->name('delivery.update');
 Route::DELETE('deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy');
 
+Route::post('language/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');

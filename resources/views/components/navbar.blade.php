@@ -16,6 +16,12 @@
             <li class="nav-item">
             <a class="nav-link  text-orange itemNav" href="{{ route('riders.index') }}">Rider</a>
             </li>
+            <li class="nav-item">
+                <x-_locale lang="it" nation="it"/>
+            </li>
+            <li class="nav-item">
+                <x-_locale lang="us" nation="us"/>
+            </li>
         </ul> 
     </div>
     <div class="collapse navbar-collapse justify-content-end fs-5" id="navbarNavDropdown">

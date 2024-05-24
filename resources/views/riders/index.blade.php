@@ -4,7 +4,7 @@
             <x-menu-rider/>
         <div class="col-8 col-sm-6 col-md-8 m-5">
             <div class="mb-5">
-                <h1>I tuoi Rider Preferiti</h1>
+                <h1>{{ __('messages.favourite') }}</h1>
                 @if(session()->has('success'))
                     <div class="alert alert-style-success" role="alert">
                     {{ session('success') }}
