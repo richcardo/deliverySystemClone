@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\RiderController;
+use App\Http\Middleware\SetLanguageMiddleware;
+use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', [PageController::class,'welcome'] )->name('welcome');
 Route::get('/home', [Pagecontroller::class, 'home'])->name('home');
@@ -24,4 +26,7 @@ Route::get('/deliveries/{delivery}/edit/{condition}/{rider}', [DeliveryControlle
 Route::PUT('deliveries/{delivery}/update/{condition}/{rider2}', [DeliveryController::class, 'update'])->name('delivery.update');
 Route::DELETE('deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy');
 
-Route::post('language/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale');
+Route::POST('language/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale')->middleware('setLanguage');
+
+//route for searchables 
+Route::get('/riders/research', [RiderController::class, 'research'])->name('riders.research');

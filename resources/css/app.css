@@ -203,3 +203,11 @@ nav {
     width: 50%;
     height: auto;
 }
+
+.hover {
+    opacity:1;
+}
+
+.hover:hover{
+    opacity: 0.5;
+}

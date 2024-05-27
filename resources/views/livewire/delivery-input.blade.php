@@ -34,7 +34,7 @@
                                                 
                                                 <td>{{ $delivery->number }}</td>
                                                 <td>
-                                                        <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', $delivery)}}">modifica</a>
+                                                        <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', ['delivery' =>$delivery, 'condition' => 'delivery' , 'rider' => 0 ])}}">modifica</a>
                                                         <form class="d-inline" action="{{ route('delivery.destroy', $delivery) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')

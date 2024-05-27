@@ -57,4 +57,9 @@ class RiderController extends Controller
             'total' => $total,
         ]);
     }
+
+    public function research(Request $request)
+    {
+        return Rider::search($request->input('searched'));
+    }
 }

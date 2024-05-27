@@ -16,16 +16,30 @@
             <li class="nav-item">
             <a class="nav-link  text-orange itemNav" href="{{ route('riders.index') }}">Rider</a>
             </li>
-            <li class="nav-item">
-                <x-_locale lang="it" nation="it"/>
-            </li>
-            <li class="nav-item">
-                <x-_locale lang="us" nation="us"/>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle  text-orange itemNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Lingua
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                <li class="nav-item hover">
+                    <x-_locale lang="it" nation="it"/>
+                </li>
+                <li class="nav-item hover">
+                    <x-_locale lang="gb" nation="gb"/>
+                </li>
+                </ul>
             </li>
         </ul> 
     </div>
     <div class="collapse navbar-collapse justify-content-end fs-5" id="navbarNavDropdown">
-        <ul class="navbar-nav w-50 justify-content-end mx-2" aria-current="itemNav">
+        <ul class="navbar-nav w-50 justify-content-end mx-2 align-items-center" aria-current="itemNav">
+        <li>
+            <form class="d-flex justify-content-start form-control" action="" method="POST">
+                @csrf
+                <input type="text" name="searched" id="searched" class="form-control me-3">
+                <button class="btn btn-sm btn-orange" type="submit">Search</button>
+            </form>
+        </li>
         </li>
             @auth
             <li class="nav-item dropdown">
