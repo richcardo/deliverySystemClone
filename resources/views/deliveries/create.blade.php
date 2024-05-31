@@ -5,7 +5,10 @@
         <div class="col-6 col-sm-6 col-md-6 m-3">
                 <h1 class="m-3">Aggiungi una nuova Consegna</h1>
                 <div class="card text-orange font-cabin fs-4 z-0 m-3 shadow " >
-                    <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="...">   
+                    <div class="text-center w-100">
+                         <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="..."> 
+                    </div>
+                     
                     <div class="card-body">
                         @if(session()->has('success'))
                             <div class="alert alert-style-success" role="alert">

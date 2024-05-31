@@ -46,7 +46,7 @@
 
                                                 
                                                 <td>{{ $delivery->number }}</td>
-                                                <td>
+                                                <td class="w-50 text-end">
                                                         <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', [ 'delivery' => $delivery , 'condition'=>'delivery', 'rider'=> 0]) }}">modifica</a>
                                                         <form class="d-inline" action="{{ route('delivery.destroy', $delivery ) }}" method="POST">
                                                                 @csrf
