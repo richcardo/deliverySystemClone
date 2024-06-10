@@ -22,7 +22,7 @@ Route::get('/deliveries/index', [DeliveryController::class, 'index'])->name('del
 Route::get('deliveries/search', [DeliveryController::class, 'search'])->name('delivery.search');
 Route::get('/deliveries/create', [DeliveryController::class, 'create'])->name('delivery.create');
 Route::get('/deliveries/create/{rider}', [DeliveryController::class, 'createDeliveryForRider'])->name('delivery.rider.create');
-Route::POST('/deliveries/store', [DeliveryController::class, 'store'])->name('delivery.store');
+Route::POST('/deliveries/store/{condition}', [DeliveryController::class, 'store'])->name('delivery.store');
 Route::get('/deliveries/{delivery}/edit/{condition}/{rider}', [DeliveryController::class, 'edit'])->name('delivery.edit');
 Route::PUT('deliveries/{delivery}/update/{condition}/{rider2}', [DeliveryController::class, 'update'])->name('delivery.update');
 Route::DELETE('deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy');

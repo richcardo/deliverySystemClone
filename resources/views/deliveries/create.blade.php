@@ -5,22 +5,23 @@
                 <h1 class="m-3">Aggiungi una nuova Consegna</h1>
                 <div class="card text-orange font-cabin z-0 m-3 shadow " >
                     <div class="text-center w-100">
-                         <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="..."> 
+                         <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="...">
                     </div>
-                    
+
                     <div id="loadingMessage" hidden="">⌛ Loading video...</div>
                     <canvas hidden id="canvas" height="480" width="640"></canvas>
                     <div id="output">
                         <div id="outputMessage">No QR code detected.</div>
-                        <div hidden=""><b>Data:</b> <span id="outputData"></span></div>
+                        <div hidden="true"><b>Data:</b> <span id="outputData"></span></div>
+                    </div>
                     <div class="card-body">
                         @if(session()->has('success'))
                             <div class="alert alert-style-success" role="alert">
                             {{ session('success') }}
                             </div>
                         @endif
-                        <form action="{{ route('delivery.store') }}" method="POST">
-                            @csrf  
+                        <form action="{{ route('delivery.store', 'deliveries') }}" method="POST">
+                            @csrf
                             <div class="mb-3">
                                 <label class="label-form" for="name">Nome o Cognome</label>
                                 <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
@@ -42,8 +43,9 @@
                             </div>
                             <div class="mb-3">
                                 <label for="pos" class="label-form">Pos</label>
+                            </div>
                             <div class="form-check">
-                                
+
                                 <input class="form-check-input" type="radio" name="pos" id="pos" value="{{ true }}">
                                 <label class="form-check-label" for="pos">
                                     Si

@@ -1,7 +1,7 @@
 <x-layout>
 
 <div class="row justify-content-start px-0">
-        <div class="col-8 col-sm-8 col-md-8 m-3">
+        <div class="col-8 col-sm-8 col-md-12 m-3">
 
             <div class="container">
                 <div class="row justify-content-start m-3">
@@ -14,6 +14,11 @@
                             <div class="row justify-content-start">
                                     <div class="col-11">
                                         <div class="m-3">
+                                            @if(session()->has('success'))
+                                                <div class="alert alert-style-success" role="alert">
+                                                {{ session('success') }}
+                                                </div>
+                                            @endif
                                             <h4>Consegne</h4>
                                         </div>
                                         <table class="table table-custom">
@@ -40,7 +45,15 @@
                                                             @endif
                                                            
                                                         </td>
-                                                        <td><a class="btn btn-secondary btn-sm" href="{{ route('delivery.edit', ['delivery'=> $delivery, 'condition'=>'rider', 'rider' => $rider]) }}">Modifica</a></td>
+                                                        <td>
+                                                            <a class="btn btn-secondary btn-sm" href="{{ route('delivery.edit', ['delivery'=> $delivery, 'condition'=>'rider', 'rider' => $rider]) }}">Modifica</a>
+                                                            <form class="d-inline" action="{{ route('delivery.destroy', $delivery)  }}" method="post">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button class="btn btn-sm btn-danger mt-2 mt-sm-2 mt-xxl-0" type="submit">ELIMINA</button>
+                                                            </form>
+                                                    
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>

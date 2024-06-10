@@ -1,4 +1,5 @@
 import './bootstrap';
+import jsQR from "jsqr";
 
 var user = document.getElementById('user')
 var dropdownMenu = document.getElementById('dropdown-menu')
@@ -58,7 +59,7 @@ function tick() {
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     loadingMessage.hidden = true;
     canvasElement.hidden = true;
-    outputContainer.hidden = false;
+    outputContainer.hidden = true;
 
     canvasElement.height = video.videoHeight;
     canvasElement.width = video.videoWidth;
@@ -74,13 +75,17 @@ function tick() {
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
-      outputData.innerText = code.data;
-      inputName.value = code.data
-      console.log(code)
+      //outputData.innerText = code.data;
+      console.log(code.data)
+      const parsed = JSON.parse(code.data);
 
-        console.log(datas)
+    inputName.value = parsed.name
+    inputAddress.value = parsed.address
+    inputNumber.value = parsed.number
+    inputPrice.value = parsed.price
+   
      //let datas = JSON.parse(code.data)
-      
+
     } else {
       outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
@@ -88,3 +93,5 @@ function tick() {
   }
   requestAnimationFrame(tick);
 }
+
+

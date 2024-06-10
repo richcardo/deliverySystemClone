@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 text-end container-list p-0 ">
+                        <div class="col-lg-12 text-end container-list p-0">
                             <ul class="ul-menu pt-5">
                                 <li onclick="FixHover('riders')" class="hover-li riders" id="riders"><a class="text-decoration-none" href="{{ route('riders.index') }}">Riders</a></li>
                                 <li onclick="FixHover('deliveries')" class="hover-li deliveries" id="deliveries"><a class="text-decoration-none" href="{{ route('delivery.index') }}">Deliveries</a></li>
@@ -29,28 +29,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-10 p-0">
-                    
+                <div class="col-10 p-0 ">
+
                         <nav class="nav">
                             <div>
                                  <h2>Su stampu delivery system</h2>
                             </div>
                             @auth
-                            <ul class="ul-register">
-                                <li class="li-auth" id="user" onclick="dropdownMenuView()" >
+                            <ul class="ul-user">
+                                <li class="li-register" onclick="toggleMenu()">
                                     @if(auth()->check())
                                     {{ auth()->user()->name }}
                                     @endif
-                                    <ul class="ul-dropdown dropdown-menu-c" id="dropdownmenu" style="display:none">
-                                        <li>
-                                            <form action="/logout" method="post">
-                                                @csrf
-                                                <button class="btn-esci" type="submit">Esci</button>
-                                            </form>
-                                        </li>
-
-                                    </ul>
-                                </li>
+                                 </li>
+                                 
+                                <ul class="ul-dropdown" style="display:none" id="dropdownMenu">
+                                    <li class="dropdown-item-custom ">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <button type="submit">Esci</button>
+                                        </form>
+                                    </li>
+                                </ul>
                             </ul>
                             @else
                             <ul class="ul-register">
@@ -64,54 +64,50 @@
                             <a href="{{ route('delivery.create') }}" class="nav-2-a">Crea una Consegna</a>
                             <a href="{{ route('delivery.search') }}" class="nav-2-a">Cerca Consegne</a>
                         </div>
+                        <div class="padding-custom">
+                            {{ $slot }}
+                        </div>
+                        
 
-                        {{ $slot }}
-                  
                 </div>
         </div>
 </div>
     <script>
-
-var user = document.getElementById('user')
-var dropdownMenu = document.getElementById('dropdownmenu')
-
-console.log(dropdownMenu)
-
-function dropdownMenuView(){
-    if(dropdownMenu.style.display=='none'){
-        dropdownMenu.style.display=='block'
-    }else {
-        dropdownMenu.style.display=='none'
-    }
-}
-
-
+        var dropdownMenu= document.getElementById('dropdownMenu')
+        console.log(dropdownMenu)
         window.addEventListener('load',()=>{
-            if(document.getElementById('title').innerHTML=='I tuoi Rider'){
+            if(document.getElementById('title')?.innerHTML=='I tuoi Rider'){
                 document.getElementById('riders').classList.add('fixed-hover')
                 document.getElementById('deliveries').classList.remove('fixed-hover')
-            } else if(document.getElementById('title').innerHTML=='Elenco consegne'){
+            } else if(document.getElementById('title')?.innerHTML=='Elenco consegne'){
                 document.getElementById('deliveries').classList.add('fixed-hover')
                 document.getElementById('riders').classList.remove('fixed-hover')
             }
         })
 
         function FixHover($value){
-    if($value=='riders'){
-        document.getElementById('riders').classList.add('fixed-hover')
-        document.getElementById('deliveries').classList.remove('fixed-hover')
-        console.log('riders')
-    }else if ($value=='deliveries'){
-        document.getElementById('deliveries').classList.add('fixed-hover')
-        document.getElementById('riders').classList.remove('fixed-hover')
-    }
-    }
+            if($value=='riders'){
+                document.getElementById('riders').classList.add('fixed-hover')
+                document.getElementById('deliveries').classList.remove('fixed-hover')
+                console.log('riders')
+            }else if ($value=='deliveries'){
+                document.getElementById('deliveries').classList.add('fixed-hover')
+                document.getElementById('riders').classList.remove('fixed-hover')
+            }
+        }
 
-    let datas = '{ "name" : "Riccardo" }';
-    let obj = JSON.parse(datas);
-    console.log(obj.name);
-    
+        function toggleMenu(){
+            if(dropdownMenu.style.display=='none'){
+                console.log('im in')
+                dropdownMenu.style.display='block'
+            }
+            else{
+                dropdownMenu.style.display='none'
+            }
+        }
+
+
+
     </script>
-    <script src="jsQR.js"></script>
 </body>
 </html>

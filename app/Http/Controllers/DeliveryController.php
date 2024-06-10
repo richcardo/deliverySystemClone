@@ -28,7 +28,7 @@ class DeliveryController extends Controller
         return view('deliveries.createForRider', compact('rider'));
     }
 
-    public function store(StoreDeliveryRequest $request)
+    public function store(StoreDeliveryRequest $request, $condition)
     {
         $delivery = Delivery::create($request->all());
         $total=0;
@@ -57,7 +57,12 @@ class DeliveryController extends Controller
             $rider->total = $total + (50-$rider->fuel);
         }
         */
-        return redirect()->back()->with(['success'=>'Consegna creata correttamente']);
+        if($condition == 'riders'){
+            return redirect()->route('riders.index')->with(['success'=>'Consegna creata correttamente']);
+        }else{
+            return redirect()->route('delivery.index')->with(['success'=>'Consegna creata correttamente']);
+        }
+        
 
     }
 
