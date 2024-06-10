@@ -74,8 +74,6 @@ function tick() {
       outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
     }
-  } else {
-      console.log('nope')
   }
   requestAnimationFrame(tick);
 }
