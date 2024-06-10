@@ -36,7 +36,7 @@
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger uppercased" type="submit">elimina</button>
                                     </form>
-                                    <a class="btn btn-sm btn-warning mt-2 mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi consegna</a>
+                                    <a class="btn btn-sm btn-warning mt-2 mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi Consegna</a>
                                     
                                 </td>
                             </tr>

@@ -1,6 +1,6 @@
 <x-layout title="Registrazione">
-
-<div class="row justify-content-center">
+<div class="container-fluid">
+    <div class="row justify-content-center">
         <div class="col-lg-10 mt-4">
             <h1 class="text-orange">Registrati</h1>
         </div>
@@ -37,6 +37,8 @@
                 </form>
         </div>
     </div>
+</div>
+
 
    
 

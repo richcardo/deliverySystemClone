@@ -397,7 +397,7 @@ div ul li a {
     z-index: 2000;
     border: 1px var(--bg-color) solid;
     padding: 5%;
-    
+    transition-duration: display 2s;
 }
 
 .dropdown-item-custom {

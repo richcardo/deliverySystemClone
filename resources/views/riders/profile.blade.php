@@ -1,6 +1,6 @@
 <x-layout>
-
-<div class="row justify-content-start px-0">
+<div class="container-fluid">
+    <div class="row justify-content-start px-0">
         <div class="col-8 col-sm-8 col-md-12 m-3">
 
             <div class="container">
@@ -50,7 +50,7 @@
                                                             <form class="d-inline" action="{{ route('delivery.destroy', $delivery)  }}" method="post">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button class="btn btn-sm btn-danger mt-2 mt-sm-2 mt-xxl-0" type="submit">ELIMINA</button>
+                                                                <button class="btn btn-sm btn-danger mt-2 mt-sm-0 mt-xxl-0" type="submit">ELIMINA</button>
                                                             </form>
                                                     
                                                         </td>
@@ -79,6 +79,8 @@
             </div>
 
         </div>
+    </div>
 </div>
+
 
 </x-layout>

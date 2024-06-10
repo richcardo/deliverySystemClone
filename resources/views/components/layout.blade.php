@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<!-- google icon -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-<div >
+<div class="container-fluid" >
         <div class="row">
                 <div class="col-2 col-sm-2 bg-nero menu-custom">
                     <div class="row">
@@ -39,7 +41,9 @@
                             <ul class="ul-user">
                                 <li class="li-register" onclick="toggleMenu()">
                                     @if(auth()->check())
-                                    {{ auth()->user()->name }}
+                                    {{ auth()->user()->name }} <span class="material-symbols-outlined">
+                                                                arrow_drop_down
+                                                                </span>
                                     @endif
                                  </li>
                                  
