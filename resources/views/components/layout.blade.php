@@ -37,16 +37,25 @@
                             </div>
                             @auth
                             <ul class="ul-register">
-                                <li class="li-register">
+                                <li class="li-auth" id="user" onclick="dropdownMenuView()" >
                                     @if(auth()->check())
-                                    <p>{{ auth()->user()->name }}</p>
+                                    {{ auth()->user()->name }}
                                     @endif
+                                    <ul class="ul-dropdown dropdown-menu-c" id="dropdownmenu" style="display:none">
+                                        <li>
+                                            <form action="/logout" method="post">
+                                                @csrf
+                                                <button class="btn-esci" type="submit">Esci</button>
+                                            </form>
+                                        </li>
+
+                                    </ul>
                                 </li>
                             </ul>
                             @else
                             <ul class="ul-register">
-                                <li class="li-register"><a class="text-decoration-none" href="/register">Registrati</a></li>
-                                <li class="li-register"><a class="text-decoration-none" href="/login">Login</a></li>
+                                <li class="li-register hover "><a class="text-decoration-none" href="/register">Registrati</a></li>
+                                <li class="li-register hover "><a class="text-decoration-none" href="/login">Login</a></li>
                             </ul>
                             @endauth
                         </nav>
@@ -62,6 +71,20 @@
         </div>
 </div>
     <script>
+
+var user = document.getElementById('user')
+var dropdownMenu = document.getElementById('dropdownmenu')
+
+console.log(dropdownMenu)
+
+function dropdownMenuView(){
+    if(dropdownMenu.style.display=='none'){
+        dropdownMenu.style.display=='block'
+    }else {
+        dropdownMenu.style.display=='none'
+    }
+}
+
 
         window.addEventListener('load',()=>{
             if(document.getElementById('title').innerHTML=='I tuoi Rider'){

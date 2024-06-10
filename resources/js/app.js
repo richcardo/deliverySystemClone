@@ -1,5 +1,18 @@
 import './bootstrap';
 
+var user = document.getElementById('user')
+var dropdownMenu = document.getElementById('dropdown-menu')
+
+function dropdownMenuView(){
+    if(dropdownMenu.style.display=='none'){
+        dropdownMenu.style.display=='block'
+    }else {
+        dropdownMenu.style.display=='none'
+    }
+}
+
+user.addEventListener('click', dropdownMenuView());
+
 function FixHover($value){
     if($value=='riders'){
         document.getElementById('riders').classList.add('fixed-hover')

@@ -361,5 +361,60 @@ div ul li a {
     width: max-content;
     padding-right:2%;
     margin-right: 5%;
+    margin-bottom: 0px;
     text-decoration: none;    
 }
+
+.li-auth{
+    width: max-content;
+    padding-right:2%;
+    margin-right: 5%;
+    margin-bottom: 0px;
+    text-decoration: none;  
+    position: relative;  
+}
+
+.ul-dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+}
+
+.dropdown-menu-c{
+    background-color: var(--bg-white);
+    width: 100%;
+    font-size: 9px;
+    padding-top: 4%;
+    padding-left: 4%;
+    object-fit: contain;
+    padding: 3%;
+
+}
+
+.dropdown-menu-c li {
+    font-size: 15px;
+    font-style: normal;
+    margin-bottom: 5px;
+    text-align: start;
+    margin-right:10px;
+    padding-left: 5%;
+
+   
+}
+
+.dropdown-menu-c li:hover {
+    font-size: 15px;
+    font-style: normal;
+    background-color: var(--bg-black);
+    transition-duration: 1.5s;
+    margin-right:10px;
+    border-radius: 100vw;
+    padding-left: 5%;
+}
+
+.btn-esci{
+    border: none;
+    background-color: transparent;
+    color: var(--bg-color);
+}
+
