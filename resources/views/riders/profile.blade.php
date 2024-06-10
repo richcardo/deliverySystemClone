@@ -1,27 +1,22 @@
 <x-layout>
 
 <div class="row justify-content-start px-0">
-        <x-menu-rider/>
         <div class="col-8 col-sm-8 col-md-8 m-3">
 
             <div class="container">
                 <div class="row justify-content-start m-3">
                     <div class="col-8">
                         <div class="mb-3">
-                            <div class="text-start mb-3 d-flex w-75 justify-content-between">
-                                <a class="btn-orange text-decoration-none p-2" href="{{ route('riders.index') }}">Riders</a>
-                                <a class="btn-orange text-decoration-none p-2" href="{{ route('delivery.index') }}">Consegne</a>
-                            </div>
                             <h1>{{ $rider->name }} {{ $rider->surname }}</h1>
                         </div>
                         <div class="card text-orange font-cabin fs-4 z-0 m-2 shadow container p-2 " >
-                                <div class="row justify-content-start">
+                            <div class="container">
+                            <div class="row justify-content-start">
                                     <div class="col-11">
                                         <div class="m-3">
                                             <h4>Consegne</h4>
                                         </div>
-                                        
-                                        <table class="table m-3">
+                                        <table class="table table-custom">
                                             <thead>
                                                 <tr>
                                                     <th class="col">Indirizzo</th>
@@ -54,12 +49,15 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-end">
-                                     <div class="col-4">
+                                     <div class="col-12">
                                         <div class="card p-3 text-orange shadow m-3">
                                             <h2 class="fs-4">Totale da rendere : <h2 class="fs-3">{{ Number::currency($total , in: 'EUR', locale: 'it') }}</h2></h2>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                                
+                                
                                
                         </div>
                     </div>

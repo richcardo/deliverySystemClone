@@ -11,7 +11,7 @@ class DeliveryInput extends Component
 
     public function render()
     {
-        $deliveries = Delivery::list($this->input);
+        $deliveries = Delivery::searchDeliveries($this->input);
         return view('livewire.delivery-input' ,[
             'deliveries' => $deliveries,
         ]);

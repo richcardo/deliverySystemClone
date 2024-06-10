@@ -1,18 +1,12 @@
 <x-layout>
-
 <div class="row justify-content-start px-0">
-        <div class="col-8 col-sm-8col-md-8 m-3">
+        <div class="col-6 col-sm-6 col-md-6 m-3">
                 <h1 class="m-3">Aggiungi una nuova Consegna</h1>
-                <div class="card text-orange font-cabin z-0 m-3 shadow " >
+                <div class="card text-orange font-cabin fs-4 z-0 m-3 shadow " >
                     <div class="text-center w-100">
                          <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="..."> 
                     </div>
-                    
-                    <div id="loadingMessage" hidden="">⌛ Loading video...</div>
-                    <canvas hidden id="canvas" height="480" width="640"></canvas>
-                    <div id="output">
-                        <div id="outputMessage">No QR code detected.</div>
-                        <div hidden=""><b>Data:</b> <span id="outputData"></span></div>
+                     
                     <div class="card-body">
                         @if(session()->has('success'))
                             <div class="alert alert-style-success" role="alert">
@@ -58,9 +52,7 @@
                             <div class="mb-3">
                                 <label for="rider_id" class="label-form">Scegli rider (Non obbligatorio)</label>
                                 <select class="form-select" name="rider_id" id="rider_id">
-                                    @foreach($riders as $rider)
-                                        <option value="{{ $rider->id }}">{{ $rider->name }} - {{ $rider->surname }}</option>
-                                    @endforeach
+                                    <option selected value="{{ $rider->id }}">{{ $rider->name }} {{ $rider->surname }}</option>
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -72,5 +64,4 @@
                 </div>
         </div>
 </div>
-
 </x-layout>

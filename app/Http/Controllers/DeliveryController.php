@@ -23,6 +23,11 @@ class DeliveryController extends Controller
         ]);
     }
 
+    public function createDeliveryForRider(Rider $rider)
+    {
+        return view('deliveries.createForRider', compact('rider'));
+    }
+
     public function store(StoreDeliveryRequest $request)
     {
         $delivery = Delivery::create($request->all());
@@ -77,10 +82,10 @@ class DeliveryController extends Controller
        //dd($request->all());
         if($delivery->rider_id){
             $rider1 = $delivery->rider;
-            $update =  $rider1->total - $delivery->price;
-            $update=round($update,2);
+            $updateTotal =  $rider1->total - $delivery->price;
+            $updateTotal=round($updateTotal,2);
             $rider1->update([
-                'total'=> $update,
+                'total'=> $updateTotal,
             ]);
            // dd($rider1);
 

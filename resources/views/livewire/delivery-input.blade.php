@@ -1,10 +1,10 @@
-<div>
-    <div class="mb-4 w-50">
+<div class="w-100">
+    <div class="mb-2 w-50">
             <label class="form-label" for="">Cerca per Indirizzo o Nome</label>
             <input class="form-control" wire:model.live="input" type="text">
     </div>
 
-    <table class="table fs-5">
+    <table class="table w-100">
                                 <thead>
                                         <tr>
                                         <th class="col">Indirizzo</th>
@@ -12,7 +12,7 @@
                                         <th class="col">Totale</th>
                                         <th class="col">Pos</th>
                                         <th class="col">Rider</th>
-                                        <th class="col">Numero di telefono</th>
+                                        <th class="col">Telefono</th>
                                         <th class="col"></th>
                                         </tr>
                                 </thead>

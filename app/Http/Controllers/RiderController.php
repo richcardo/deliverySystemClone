@@ -28,7 +28,7 @@ class RiderController extends Controller
         $total = $total + (50- $rider->fuel);
         $rider->update(['total'=>$total]);
 
-        return redirect()->back()->with(['success'=>'Rider modificato correttamente!']);
+        return redirect()->route('riders.index')->with(['success'=>'Rider modificato correttamente!']);
     }
 
     public function destroy(Rider $rider)

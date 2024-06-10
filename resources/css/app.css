@@ -4,6 +4,7 @@
 
 
 :root {
+    --bg-white : #F3F7EC;
     --bg-color: #f29101 ;
     --bg-black: #1d1d1b;
 }
@@ -12,10 +13,19 @@
     font-weight: 400;
 }
 body {
+    margin: 0px;
     text-transform: uppercase;
+    background-color: #FFFFFF;
     color:var(--bg-color);
     font-family: "Cabin", sans-serif;
     font-weight: 400;
+    max-height: 100vh;
+}
+
+html {
+    max-height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .bg-orange{
     background-color:var(--bg-color) !important;
@@ -79,6 +89,7 @@ nav {
 .card-style{
     border-top: solid 5px  #1d1d1b ;
     border-bottom: solid 5px  #1d1d1b ;
+    height: min-content;
 }
 
 .btn-orange{
@@ -210,4 +221,145 @@ nav {
 
 .hover:hover{
     opacity: 0.5;
+}
+
+
+.menu-custom {
+    height: 100vh;
+
+}
+
+div ul li {
+    list-style: none;
+    font-size: 24px;
+    margin-bottom:24px;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+div ul li a {
+    color: var(--bg-color);
+}
+
+.ul-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+
+}
+.hover-li {
+    background-color: transparent;
+    margin-right: 0;
+    padding-right: 5%;
+    height: 50px;
+    width: 100%;
+    text-align: end;
+    display: grid;
+    align-items: center;
+    border-radius: 50vw 0 0 50vw;
+}
+
+.hover-li:hover{
+    background-color:#F3F7EC;
+    transition-duration: 1s;
+}
+
+.hover-li.fixed-hover{
+    background-color: var(--bg-white);
+    margin-right: 0;
+    padding-right: 5%;
+    height: 50px;
+    text-align: end;
+    display: grid;
+    align-items: center;
+    border-radius: 50vw 0 0 50vw;
+}
+
+.container-list{
+    display: flex;
+    flex-flow: row wrap;
+    object-fit: contain;
+    justify-content: end;
+}
+
+.nav {
+    background-color: var(--bg-black);
+    border-left: var(--bg-color) 1px solid;
+    border-bottom: var(--bg-color) 1px solid;
+    padding-left: 2%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    min-height:90px;
+    width: 100%;
+}
+
+.nav-2{
+    background-color:var(--bg-color);
+    width: 75%;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #FFFFFF;
+    border-radius: 50vw;
+    padding-left: 2%;
+    margin-left: 2%;
+    margin-top:5px;
+}
+
+.nav-2-a{
+    padding-left: 1%;
+    padding-right: 1%;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: 1px solid var(--bg-black);
+    padding: 0.5% 1%;
+    margin-left: 1%;
+    background-color: var(--bg-black);
+    background: linear-gradient(white,black);
+    border-radius: 10px;
+}
+
+.nav-2-a:hover{
+    background: linear-gradient(black,white);
+}
+
+.table-custom{
+    font-size: 12px;
+    height: 50vh;
+    border: var(--bg-color) 1px solid;
+    outline: auto;
+    padding: 2% 1%;
+}
+
+.align-content-center-c{
+    align-content:center;
+}
+
+
+.height-100vh{
+    max-height: 100vh;
+}
+
+.ul-register{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    text-decoration: none;
+    width: 50%;
+    margin-bottom: 0px;
+}
+
+.li-register{
+    width: max-content;
+    padding-right:2%;
+    margin-right: 5%;
+    text-decoration: none;    
 }

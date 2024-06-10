@@ -1,16 +1,11 @@
 <x-layout>
 
-    @auth
-    <div class="row justify-content-start">
-        <div class="col-lg-6 m-5">
-            <h1>Ciao {{ auth()->user()->name }}</h1>
+<div class="container-fluid ">
+    <div class="row justify-content-center ">
+        <div class="col-lg-12">
+            <h2>ciao</h2>
         </div>
     </div>
-    @endauth
-
-    <header>
-        <img src="{{ asset('/img')}}" alt="">
-    </header>
-
+</div>
 
 </x-layout>

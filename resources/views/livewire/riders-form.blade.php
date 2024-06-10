@@ -1,4 +1,4 @@
-<div class="card text-orange font-cabin fs-4 z-0 m-5 shadow " >
+<div class="card text-orange font-cabin z-0 m-5 shadow " >
   <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="...">   
   <div class="card-body">
     @if(session()->has('success'))

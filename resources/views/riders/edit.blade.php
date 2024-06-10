@@ -1,7 +1,6 @@
 <x-layout>
 
 <div class="row justify-content-start px-0">
-        <x-menu-rider/>
         <div class="col-6 col-sm-6 col-md-6 m-5">
         <div class="card text-orange font-cabin fs-4 z-0 m-5 shadow " >
   <img class="img-fluid img-style-form ms-5" src="https://sustampupizzeria.com/wp-content/uploads/2023/12/rider-su-stampu.svg" class="card-img-top" alt="...">   

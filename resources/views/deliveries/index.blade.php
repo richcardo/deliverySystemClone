@@ -1,23 +1,18 @@
 <x-layout>
 
 <div class="row justify-content-start px-0">
-        <x-menu-delivery/>
-        <div class="col-6 col-sm-6 col-md-6 m-5">
+        <div class="col-10 col-sm-10 col-md-10 m-5">
                 <div class="container">
                         <div class="row justify-content-start">
                                 <div class="mb-3">
-                                        <h1>Elenco consegne</h1>
+                                        <h1 id="title">Elenco consegne</h1>
                                         @if(session()->has('success'))
                                         <div class="alert alert-style-success" role="alert">
                                         {{ session('success') }}
                                         </div>
-                                        @endif
-                                        <div class="d-flex m-2 justify-content-center">
-                                                <a class="btn-orange me-3 text-decoration-none" href="{{ route('delivery.create') }}">Aggiungi Consegna</a>
-                                                <a class="btn-orange me-3 text-decoration-none" href="{{ route('delivery.search') }}">Cerca Consegna</a>
-                                        </div>    
+                                        @endif  
                                 </div>
-                                <table class="table">
+                                <table class="table table-custom">
                                 <thead>
                                         <tr>
                                         <th class="col">Indirizzo</th>
@@ -25,7 +20,7 @@
                                         <th class="col">Totale</th>
                                         <th class="col">Pos</th>
                                         <th class="col">Rider</th>
-                                        <th class="col">Numero di telefono</th>
+                                        <th class="col">telefono</th>
                                         <th class="col"></th>
                                         </tr>
                                 </thead>
@@ -42,7 +37,7 @@
                                                         <span class="badge text-bg-danger">No</span>
                                                         @endif
                                                 </td>
-                                                <td class="text-orange fs-5"><a class="text-decoration-none text-orange" href="{{ route('rider.profile', $delivery->rider->id) }}">{{ $delivery->rider->name }} {{ $delivery->rider->surname }}</a></td>
+                                                <td class="text-orange "><a class="text-decoration-none text-orange" href="{{ route('rider.profile', $delivery->rider->id) }}">{{ $delivery->rider->name }} {{ $delivery->rider->surname }}</a></td>
 
                                                 
                                                 <td>{{ $delivery->number }}</td>

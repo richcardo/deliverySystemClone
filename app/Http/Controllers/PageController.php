@@ -37,8 +37,5 @@ class PageController extends Controller
     );
     }
 
-    public function setLanguage($lang){
-        session()->put('locale', $lang );
-        return redirect()->back();
-    }
+
 }
