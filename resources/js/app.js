@@ -1,4 +1,5 @@
 import './bootstrap';
+import jsQR from "jsqr";
 
 function FixHover($value){
     if($value=='riders'){
@@ -44,7 +45,7 @@ function tick() {
   loadingMessage.innerText = "⌛ Loading video..."
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     loadingMessage.hidden = true;
-    canvasElement.hidden = true;
+    canvasElement.hidden = false;
     outputContainer.hidden = false;
 
     canvasElement.height = video.videoHeight;
@@ -62,12 +63,16 @@ function tick() {
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
       outputData.innerText = code.data;
-      inputName.value = code.data
-      console.log(code)
+      console.log(code.data)
+      const parsed = JSON.parse(code.data);
 
-        console.log(datas)
+    inputName.value = parsed.name
+    inputAddress.value = parsed.address
+    inputNumber.value = parsed.number
+    inputPrice.value = parsed.price
+   
      //let datas = JSON.parse(code.data)
-      
+
     } else {
       outputMessage.hidden = false;
       outputData.parentElement.hidden = true;

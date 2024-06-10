@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-10 p-0">
-                    
+
                         <nav class="nav">
                             <div>
                                  <h2>Su stampu delivery system</h2>
@@ -57,38 +57,33 @@
                         </div>
 
                         {{ $slot }}
-                  
+
                 </div>
         </div>
 </div>
     <script>
 
         window.addEventListener('load',()=>{
-            if(document.getElementById('title').innerHTML=='I tuoi Rider'){
+            if(document.getElementById('title')?.innerHTML=='I tuoi Rider'){
                 document.getElementById('riders').classList.add('fixed-hover')
                 document.getElementById('deliveries').classList.remove('fixed-hover')
-            } else if(document.getElementById('title').innerHTML=='Elenco consegne'){
+            } else if(document.getElementById('title')?.innerHTML=='Elenco consegne'){
                 document.getElementById('deliveries').classList.add('fixed-hover')
                 document.getElementById('riders').classList.remove('fixed-hover')
             }
         })
 
         function FixHover($value){
-    if($value=='riders'){
-        document.getElementById('riders').classList.add('fixed-hover')
-        document.getElementById('deliveries').classList.remove('fixed-hover')
-        console.log('riders')
-    }else if ($value=='deliveries'){
-        document.getElementById('deliveries').classList.add('fixed-hover')
-        document.getElementById('riders').classList.remove('fixed-hover')
-    }
-    }
+            if($value=='riders'){
+                document.getElementById('riders').classList.add('fixed-hover')
+                document.getElementById('deliveries').classList.remove('fixed-hover')
+                console.log('riders')
+            }else if ($value=='deliveries'){
+                document.getElementById('deliveries').classList.add('fixed-hover')
+                document.getElementById('riders').classList.remove('fixed-hover')
+            }
+        }
 
-    let datas = '{ "name" : "Riccardo" }';
-    let obj = JSON.parse(datas);
-    console.log(obj.name);
-    
     </script>
-    <script src="jsQR.js"></script>
 </body>
 </html>
