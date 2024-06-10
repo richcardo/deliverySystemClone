@@ -63,11 +63,14 @@ function tick() {
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
       outputData.innerText = code.data;
-      inputName.value = code.data
+      console.log(code.data)
       const parsed = JSON.parse(code.data);
 
-      console.log(parsed, parsed.name)
-
+    inputName.value = parsed.name
+    inputAddress.value = parsed.address
+    inputNumber.value = parsed.number
+    inputPrice.value = parsed.price
+   
      //let datas = JSON.parse(code.data)
 
     } else {
