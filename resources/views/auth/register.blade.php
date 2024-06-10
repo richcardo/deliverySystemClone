@@ -1,13 +1,13 @@
 <x-layout title="Registrazione">
 
-    <div class="row justify-content-start">
-        <div class="col-lg-10 ms-3 mt-2">
+<div class="row justify-content-center">
+        <div class="col-lg-10 mt-4">
             <h1 class="text-orange">Registrati</h1>
         </div>
     </div>
 
-    <div class="row justify-content-start">
-        <div class="col-lg-3 ms-3 card-style">
+    <div class="row justify-content-start ms-3">
+        <div class="col-lg-3 card-style">
                 <form action="/register" method="POST">
                     @csrf
                     <div class="mb-2">
@@ -37,5 +37,7 @@
                 </form>
         </div>
     </div>
+
+   
 
 </x-layout>

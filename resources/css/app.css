@@ -77,6 +77,8 @@ nav {
   text-transform: uppercase;
   font-weight: 800;
   z-index: 1000;
+  position: fixed;
+  top: 0;
 
 }
 
@@ -225,7 +227,12 @@ nav {
 
 
 .menu-custom {
-    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+   
 
 }
 
@@ -312,6 +319,10 @@ div ul li a {
     padding-left: 2%;
     margin-left: 2%;
     margin-top:5px;
+    position: fixed;
+    top: 95px;
+    left: 17%;
+    z-index: 100;
 }
 
 .nav-2-a{
@@ -360,6 +371,54 @@ div ul li a {
 .li-register{
     width: max-content;
     padding-right:2%;
-    margin-right: 5%;
-    text-decoration: none;    
+    text-decoration: none;  
+    position: relative;  
+    margin-bottom: 0;
 }
+
+.padding-custom{
+    padding-left: 20%;
+    padding-top: 120px;
+}
+
+.ul-user{
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 0px;
+    padding-left: 0;
+}
+
+.ul-dropdown{
+    position:absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    background: var(--bg-white);
+    z-index: 2000;
+    border: 1px var(--bg-color) solid;
+    padding: 5%;
+    
+}
+
+.dropdown-item-custom {
+    background-color: transparent;
+    margin: 4%;
+    border-radius: 10px;
+    width: 100%;
+    align-content: center;
+    object-fit: contain; 
+    z-index: 2000;
+
+}
+
+.dropdown-item-custom:hover{
+    background-color: var(--bg-black);
+    transition-duration: 1.5s;
+}
+
+.ul-dropdown button {
+    border: transparent;
+    background-color: transparent;
+    color: var(--bg-color);
+}
+

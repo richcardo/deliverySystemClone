@@ -5,7 +5,7 @@
                 <div class="container">
                         <div class="row justify-content-start">
                                 <div class="mb-3">
-                                        <h1 id="title">Elenco consegne</h1>
+                                        <h3 id="title">Elenco consegne</h3>
                                         @if(session()->has('success'))
                                         <div class="alert alert-style-success" role="alert">
                                         {{ session('success') }}

@@ -45,8 +45,8 @@ function tick() {
   loadingMessage.innerText = "⌛ Loading video..."
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     loadingMessage.hidden = true;
-    canvasElement.hidden = false;
-    outputContainer.hidden = false;
+    canvasElement.hidden = true;
+    outputContainer.hidden = true;
 
     canvasElement.height = video.videoHeight;
     canvasElement.width = video.videoWidth;
@@ -62,7 +62,7 @@ function tick() {
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
-      outputData.innerText = code.data;
+      //outputData.innerText = code.data;
       console.log(code.data)
       const parsed = JSON.parse(code.data);
 
@@ -80,3 +80,5 @@ function tick() {
   }
   requestAnimationFrame(tick);
 }
+
+

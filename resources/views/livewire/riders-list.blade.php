@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
     <div class="row justify-content-start">
-        <div class="col-11">
+        <div class="col-12">
                 <table class="table table-custom">
                     <thead>
                         <tr>
@@ -36,7 +36,7 @@
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger uppercased" type="submit">elimina</button>
                                     </form>
-                                    <a class="btn btn-sm btn-warning" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi consegna</a>
+                                    <a class="btn btn-sm btn-warning mt-2 mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi consegna</a>
                                     
                                 </td>
                             </tr>
