@@ -1,4 +1,5 @@
 import './bootstrap';
+import jsQR from "jsqr";
 
 function FixHover($value){
     if($value=='riders'){
@@ -44,7 +45,7 @@ function tick() {
   loadingMessage.innerText = "⌛ Loading video..."
   if (video.readyState === video.HAVE_ENOUGH_DATA) {
     loadingMessage.hidden = true;
-    canvasElement.hidden = true;
+    canvasElement.hidden = false;
     outputContainer.hidden = false;
 
     canvasElement.height = video.videoHeight;
@@ -63,15 +64,18 @@ function tick() {
       outputData.parentElement.hidden = false;
       outputData.innerText = code.data;
       inputName.value = code.data
-      console.log(code)
+      const parsed = JSON.parse(code.data);
 
-        console.log(datas)
+      console.log(parsed, parsed.name)
+
      //let datas = JSON.parse(code.data)
-      
+
     } else {
       outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
     }
+  } else {
+      console.log('nope')
   }
   requestAnimationFrame(tick);
 }
