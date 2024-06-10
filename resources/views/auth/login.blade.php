@@ -1,7 +1,7 @@
 <x-layout title="Login">
 
     <div class="row justify-content-start">
-        <div class="col-lg-10 ms-3 mt-2">
+        <div class="col-lg-10 ms-3 mt-4">
             <h1 class="text-orange">Accedi con le tue credenziali</h1>
         </div>
     </div>

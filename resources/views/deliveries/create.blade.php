@@ -12,7 +12,7 @@
                     <canvas hidden id="canvas" height="480" width="640"></canvas>
                     <div id="output">
                         <div id="outputMessage">No QR code detected.</div>
-                        <div hidden=""><b>Data:</b> <span id="outputData"></span></div>
+                        <div hidden="true"><b>Data:</b> <span id="outputData"></span></div>
                     </div>
                     <div class="card-body">
                         @if(session()->has('success'))
@@ -20,7 +20,7 @@
                             {{ session('success') }}
                             </div>
                         @endif
-                        <form action="{{ route('delivery.store') }}" method="POST">
+                        <form action="{{ route('delivery.store', 'deliveries') }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label class="label-form" for="name">Nome o Cognome</label>
