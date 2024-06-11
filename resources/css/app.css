@@ -35,6 +35,9 @@ html {
   color:var(--bg-color) !important;
 }
 
+.text-black{
+    color: var(--bg-black);
+}
 .bg-nero {
     background-color:var(--bg-black) !important;
 }
@@ -347,7 +350,7 @@ div ul li a {
     height: 50vh;
     border: var(--bg-color) 1px solid;
     outline: auto;
-    padding: 2% 1%;
+    padding: 5% 1%;
 }
 
 .align-content-center-c{
@@ -378,7 +381,7 @@ div ul li a {
 
 .padding-custom{
     padding-left: 20%;
-    padding-top: 120px;
+    padding-top: 130px;
 }
 
 .ul-user{
@@ -422,3 +425,11 @@ div ul li a {
     color: var(--bg-color);
 }
 
+.menu-admin-item{
+    text-transform: lowercase;
+    font-weight: 300;
+}
+
+.table-custom-admin{
+    padding-left: 10px;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Console\Commands\MakeAdmin;
 use App\Http\Middleware\SetLanguageMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,6 +18,10 @@ return Application::configure(basePath: dirname(__DIR__))
                'setLanguage'=> SetLanguageMiddleware::class,
         ]);
     })
+
+    ->withCommands([
+        MakeAdmin::class,
+    ])
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();

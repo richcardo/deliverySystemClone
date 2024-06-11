@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{$title ?? config('app.name')}}</title>
-    @vite(['resources/css/app.css','resources/js/app.js', 'resources/js/jsQR.js'])
+    @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<!-- google icon -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 <div class="container-fluid" >
@@ -54,6 +53,10 @@
                                             <button type="submit">Esci</button>
                                         </form>
                                     </li>
+                                    @if(auth()->check() && auth()->user()->is_admin)
+                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('admin.index') }}">Menu admin</a></li>
+                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('admin.create') }}">Crea Admin</a></li>
+                                    @endif
                                 </ul>
                             </ul>
                             @else
@@ -109,6 +112,8 @@
                 dropdownMenu.style.display='none'
             }
         }
+
+
 
 
 
