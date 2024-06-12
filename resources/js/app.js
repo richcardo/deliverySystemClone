@@ -79,5 +79,21 @@ function FixHover($value){
       requestAnimationFrame(tick);
     }
 
+var modale= document.getElementById('modale')
+function displayModale(){
+  if(modale.style.display=='none'){
+    modale.style.display='block';
+  }else {
+    modale.style.display='none'
+  }
+}
+
+var btnDelete = document.getElementById('btn-delete')
+
+console.log(btnDelete)
+
+for (let i of btnDelete){
+  console.log(i);
+}
 
 

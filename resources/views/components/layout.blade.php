@@ -113,7 +113,29 @@
             }
         }
 
+        var modale= document.getElementById('modale')
+function displayModale(){
+  if(modale.style.display=='none'){
+    modale.style.display='block';
+  }else {
+    modale.style.display='none'
+  }
+}
 
+
+var btnsDelete = document.querySelectorAll('#btn-delete')
+var deleteForm =document.getElementById('form-delete')
+console.log(btnsDelete)
+
+for (let btnDelete of btnsDelete){
+    console.log(btnDelete)
+  btnDelete.addEventListener('click', e =>{
+    const action = e.target.getAttribute('data-action');
+
+    deleteForm.setAttribute('action', action)
+    
+  })
+}
 
 
 

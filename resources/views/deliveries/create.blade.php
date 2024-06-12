@@ -11,8 +11,12 @@
 
                         
                         
-                        <canvas id="canvas" height="480" width="640"></canvas>
+                        <div id="loadingMessage" hidden="">⌛ Loading video...</div>
+                        <canvas hidden id="canvas" height="480" width="640"></canvas>
                         <div id="output">
+                            <div id="outputMessage">No QR code detected.</div>
+                            <div hidden="true"><b>Data:</b> <span id="outputData"></span></div>
+                        </div>
                         <div class="card-body">
                             @if(session()->has('success'))
                                 <div class="alert alert-style-success" role="alert">

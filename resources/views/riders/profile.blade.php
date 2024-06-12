@@ -1,5 +1,18 @@
 <x-layout>
-<div class="container-fluid">
+    <div class="container-fluid">
+        <div class="modale" id="modale" style="display: none;">
+                <div class="testo1">
+                    <p>Vuoi Davvero cancellare la consegna?</p>
+                </div>
+                <div class="options">
+                    <button onclick="displayModale()" class="btn btn-sm btn-primary">No!</button>
+                    <form action="" method="POST" id="form-delete">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm btn-danger" type="submit">Elimina</button>
+                    </form>
+                </div>
+        </div>
     <div class="row justify-content-start px-0">
         <div class="col-8 col-sm-8 col-md-12 m-3">
 
@@ -47,12 +60,7 @@
                                                         </td>
                                                         <td>
                                                             <a class="btn btn-secondary btn-sm" href="{{ route('delivery.edit', ['delivery'=> $delivery, 'condition'=>'rider', 'rider' => $rider]) }}">Modifica</a>
-                                                            <form class="d-inline" action="{{ route('delivery.destroy', $delivery)  }}" method="post">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button class="btn btn-sm btn-danger mt-2 mt-sm-0 mt-xxl-0" type="submit">ELIMINA</button>
-                                                            </form>
-                                                    
+                                                            <button onclick="displayModale()" class="btn btn-danger btn-sm " data-action="{{ route('delivery.destroy', $delivery) }}" id="btn-delete">ELIMINA</button>
                                                         </td>
                                                     </tr>
                                                 @endforeach
