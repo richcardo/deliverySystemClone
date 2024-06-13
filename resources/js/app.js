@@ -96,4 +96,13 @@ for (let i of btnDelete){
   console.log(i);
 }
 
+function success(position){
+  const crd =position.coords;
+  console.log(`Your current Position is Latitude : ${crd.latitude}, Longitude : ${crd.longitude}`)
+}
 
+function error(err){
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error);

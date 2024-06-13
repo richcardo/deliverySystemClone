@@ -21,6 +21,7 @@
                                                 <th class="col">Pos</th>
                                                 <th class="col">Rider</th>
                                                 <th class="col">telefono</th>
+                                                <th class="col">distanza[km]</th>
                                                 <th class="col"></th>
                                                 </tr>
                                         </thead>
@@ -41,6 +42,7 @@
 
                                                         
                                                         <td>{{ $delivery->number }}</td>
+                                                        <td>{{ round($delivery->distance,1) }}</td>
                                                         <td class="w-50 text-end">
                                                                 <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', [ 'delivery' => $delivery , 'condition'=>'delivery', 'rider'=> 0]) }}">modifica</a>
                                                                 <form class="d-inline" action="{{ route('delivery.destroy', $delivery ) }}" method="POST">

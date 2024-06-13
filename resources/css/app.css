@@ -98,18 +98,35 @@ nav {
 }
 
 .btn-orange{
-    background-color: #1d1d1b;
+    background-color:var(--bg-black);
     color: #f29101;
     padding: 0 2%;
     text-transform: uppercase;
     border-radius:5px;
 }
 .btn-orange:hover{
-    background-color: rgba(0, 0, 0, 0.8) ;
+    background-color: var(--bg-black) ;
     color: #f29101;
     padding: 0 2%;
     text-transform: uppercase;
     border-radius:5px;
+    opacity: 0.6;
+    transition-duration: 1s;
+}
+
+@keyframes vibrate {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
 .uppercased{
@@ -471,4 +488,10 @@ div ul li a {
     justify-content: space-around;
     width: 100%;
 
+}
+
+#my_map {
+    height: 600px;
+    width: 600px;
+    margin: 0 auto;
 }

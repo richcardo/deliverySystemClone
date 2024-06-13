@@ -29,6 +29,7 @@
                                     <label class="label-form" for="name">Nome o Cognome</label>
                                     <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
                                     @error('name')  <span class="text-danger fs-6">{{ $message }}</span> @enderror
+                                    <input type="text" name="origin"  id="origin-input" hidden>
                                 </div>
                                 <div class="mb-3">
                                     <label class="label-form" for="address">Indirizzo</label>
@@ -43,6 +44,7 @@
                                 <div class="mb-3">
                                     <label class="label-form" for="price"> Totale € </label>
                                     <input class="form-control" type="number" name="price" id="price" min="0" step="0.01" value="{{ old('price') }}">
+                                    @error('price')  <span class="text-danger fs-6">{{ $message }}</span> @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="pos" class="label-form">Pos</label>
@@ -77,8 +79,17 @@
                         </div>
                     </div>
             </div>
+            <div class="col-12">
+            <div id="map"></div>
+
+            </div>
     </div>
+
 </div>
 
-
+<!-- prettier-ignore -->
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY&callback=initMap&v=weekly"
+      defer
+    ></script>
 </x-layout>

@@ -26,6 +26,7 @@
                                     <label class="label-form" for="name">Nome o Cognome</label>
                                     <input class="form-control" type="text" name="name" id="name" value="{{ old('name') }}">
                                     @error('name')  <span class="text-danger fs-6">{{ $message }}</span> @enderror
+                                    <input type="text" name="origin"  id="origin-input" hidden>
                                 </div>
                                 <div class="mb-3">
                                     <label class="label-form" for="address">Indirizzo</label>

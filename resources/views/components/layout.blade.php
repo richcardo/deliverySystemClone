@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 </head>
 <body>
 <div class="container-fluid" >
@@ -105,7 +106,6 @@
 
         function toggleMenu(){
             if(dropdownMenu.style.display=='none'){
-                console.log('im in')
                 dropdownMenu.style.display='block'
             }
             else{
@@ -113,7 +113,7 @@
             }
         }
 
-        var modale= document.getElementById('modale')
+var modale= document.getElementById('modale')
 function displayModale(){
   if(modale.style.display=='none'){
     modale.style.display='block';
@@ -125,17 +125,54 @@ function displayModale(){
 
 var btnsDelete = document.querySelectorAll('#btn-delete')
 var deleteForm =document.getElementById('form-delete')
-console.log(btnsDelete)
 
-for (let btnDelete of btnsDelete){
-    console.log(btnDelete)
-  btnDelete.addEventListener('click', e =>{
+if(btnsDelete){
+  for (let btnDelete of btnsDelete){
+    //console.log(btnDelete)
+  btnDelete.addEventListener('click', e => {
     const action = e.target.getAttribute('data-action');
 
     deleteForm.setAttribute('action', action)
     
   })
+}  
 }
+
+let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+const originInput=document.getElementById('origin-input');
+console.log(originInput)
+initMap();
+
+function success(position){
+  const crd =position.coords;
+  console.log(`Your current Position is Latitude : ${crd.latitude}, Longitude : ${crd.longitude}`)
+  let position2 = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY`
+    console.log(position2)
+    async function logMovies() {
+  const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${crd.latitude},${crd.longitude}&key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY`);
+  const address = await response.json();
+  console.log(address['results'][0]['formatted_address']);
+  originInput.value=address['results'][0]['formatted_address']
+}
+logMovies()
+    
+}
+
+function error(err){
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error);
 
 
 

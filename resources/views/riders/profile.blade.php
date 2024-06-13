@@ -41,6 +41,7 @@
                                                     <th class="col">Nome</th>
                                                     <th class="col">Totale</th>
                                                     <th class="col">Pos</th>
+                                                    <th>Distanza</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -50,6 +51,7 @@
                                                         <td class="text-orange">{{ $delivery->address }}</td>
                                                         <td>{{ $delivery->name }}</td>
                                                         <td class="text-orange">{{  Number::currency($delivery->price , in: 'EUR', locale: 'it') }}</td>
+                                                        
                                                         <td>
                                                             @if($delivery->pos)
                                                                 <span class="badge text-bg-success">Si</span>
@@ -58,6 +60,7 @@
                                                             @endif
                                                            
                                                         </td>
+                                                        <td>{{ round($delivery->distance,1) }}</td>
                                                         <td>
                                                             <a class="btn btn-secondary btn-sm" href="{{ route('delivery.edit', ['delivery'=> $delivery, 'condition'=>'rider', 'rider' => $rider]) }}">Modifica</a>
                                                             <button onclick="displayModale()" class="btn btn-danger btn-sm " data-action="{{ route('delivery.destroy', $delivery) }}" id="btn-delete">ELIMINA</button>

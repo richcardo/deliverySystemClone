@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeliveryRequest;
 use App\Models\Delivery;
 use App\Models\Rider;
+use App\Services\GoogleDistanceMatrixService;
 
 class DeliveryController extends Controller
 {
+    protected $googleDistanceMatrix;
+
+    public function __construct(GoogleDistanceMatrixService $googleDistanceMatrix)
+    {
+        $this->googleDistanceMatrix = $googleDistanceMatrix;
+    }
+
     public function index()
     {
         return view('deliveries.index', [
@@ -31,6 +39,15 @@ class DeliveryController extends Controller
     public function store(StoreDeliveryRequest $request, $condition)
     {
         $delivery = Delivery::create($request->all());
+        $origins = $request->origin;
+        $destination = $request->address;
+        
+        $distances = $this->googleDistanceMatrix->getDistanceMatrix([$origins],[$destination] );
+        //dd(($distances['rows'][0]['elements'][0]['distance']['value']/1000));
+
+        $delivery->distance= ($distances['rows'][0]['elements'][0]['distance']['value']/1000);
+        $delivery->save();
+        //Calcolo del totale delle consegne in prezzo
         $total=0;
         $rider = $delivery->rider;
         if($delivery->rider_id){
@@ -44,6 +61,18 @@ class DeliveryController extends Controller
             $total = round($total, 2);
            // $rider->total = $total;
            $rider->update(['total'=> $total]);
+        }
+
+        //Calcolo del totale della distanza percorsa
+
+        if($delivery->id){
+            $rider=$delivery->rider;
+            $totalDistance=0;
+            foreach($rider->deliveries as $delivery){
+                $totalDistance+=$delivery->distance;
+            }
+            $rider->total_distance = $totalDistance;
+            $rider->save();
         }
 
         /*
@@ -85,6 +114,7 @@ class DeliveryController extends Controller
     public function update(StoreDeliveryRequest $request, Delivery $delivery, $condition, $rider2)
     {
        //dd($request->all());
+       //Scalo i soldi della consegna che sto modificando
         if($delivery->rider_id){
             $rider1 = $delivery->rider;
             $updateTotal =  $rider1->total - $delivery->price;
@@ -99,7 +129,7 @@ class DeliveryController extends Controller
         //dd($rider1);
 
         $delivery->update($request->all());
-
+        //ricalcolo il totale dopo aver modificato la consegna e quindi il prezzo eventualmente
         $total=0;
        // $rider = $delivery->rider;
        $rider = Rider::find($delivery->rider_id);
@@ -137,7 +167,7 @@ class DeliveryController extends Controller
     {
         $rider= $delivery->rider;
         $delivery->delete();
-
+        //Ricaclolo del totale dopo aver eliminato una consegna
         $total=0;
         $rider = $delivery->rider;
         if($rider->deliveries){

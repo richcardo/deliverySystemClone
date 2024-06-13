@@ -12,6 +12,7 @@
                             <th class="col">Rimborso</th>
                             <th class="col">Consegne</th>
                             <th class="col">Totale</th>
+                            <th class="col">Distanza percorsa</th>
                             <th class="col"></th>
                             <th class="col"></th>
                         </tr>
@@ -28,6 +29,7 @@
                                 {{ $rider->deliveries->count() }}
                                 </td>
                                 <td class="text-orange">{{ Number::currency($rider->total , in: 'EUR', locale: 'it') }}</td>
+                                <td>{{ $rider->total_distance }}</td>
                                 <td class=""><a class="btn btn-sm btn-primary " href="{{ route('rider.profile', $rider) }}">Profilo</a></td>
                                 <td class="w-100">
                                     <a class="btn btn-sm btn-secondary me-2" href="{{ route('rider.edit', $rider) }}">modifica</a>
