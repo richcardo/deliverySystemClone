@@ -109,6 +109,7 @@ class DeliveryController extends Controller
     public function update2(StoreDeliveryRequest $request, Delivery $delivery)
     {
         $delivery->update(['pos' => $request->pos]);
+    
         return redirect()->back()->with(['success'=>'Pos modificato']);
     }
     public function update(StoreDeliveryRequest $request, Delivery $delivery, $condition, $rider2)
@@ -125,10 +126,38 @@ class DeliveryController extends Controller
            // dd($rider1);
 
         }
+        //scalo la distanza della consegna che sto modificando 
+        if($delivery->rider_id){
+            $rider = $delivery->rider;
+            $distance_to_delete = $delivery->distance;
+            $rider->total_distance = $rider->total_distance - $distance_to_delete;
+            $rider->save();
+        }
         
         //dd($rider1);
 
         $delivery->update($request->all());
+        //calcolo la distanza e la assegno alla consegna dopo di che ricalcolo il totale della distanza percorsa dal rider
+        $origins = $request->origin;
+        $destination = $request->address;
+        $distances = $this->googleDistanceMatrix->getDistanceMatrix([$origins],[$destination] );
+        $delivery->distance= ($distances['rows'][0]['elements'][0]['distance']['value']/1000);
+        $delivery->save();
+        //ricalcolo il totale della distanza percorsa dal rider
+        if($delivery->id){
+            $rider=$delivery->rider;
+            $totalDistance=0;
+            if($rider->deliveries){
+                foreach($rider->deliveries as $delivery){
+                    $totalDistance += $delivery->distance;
+                }
+            }
+            
+            $rider->total_distance = $totalDistance;
+            $rider->save();
+        }
+
+
         //ricalcolo il totale dopo aver modificato la consegna e quindi il prezzo eventualmente
         $total=0;
        // $rider = $delivery->rider;
@@ -179,6 +208,20 @@ class DeliveryController extends Controller
             $total= $total + (50 - $rider->fuel);
             $total = round($total, 2);
            $rider->update(['total'=> $total]);
+        }
+
+        //ricalcolo la distanza total del rider
+        if($rider){
+            $totalDistance=0;
+            if($rider->deliveries){
+               
+                foreach($rider->deliveries as $delivery){
+                    $totalDistance += $delivery->distance;
+                }
+            }
+    
+            $rider->total_distance = $totalDistance;
+            $rider->save();
         }
 
         

@@ -33,11 +33,7 @@
                                 <td class=""><a class="btn btn-sm btn-primary " href="{{ route('rider.profile', $rider) }}">Profilo</a></td>
                                 <td class="w-100">
                                     <a class="btn btn-sm btn-secondary me-2" href="{{ route('rider.edit', $rider) }}">modifica</a>
-                                    <form class="d-inline " action="{{ route('rider.destroy', $rider) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger uppercased" type="submit">elimina</button>
-                                    </form>
+                                    <button class="btn btn-sm btn-danger uppercased" data-action="{{ route('rider.destroy', $rider ) }}" onclick="displayModaleRider()" id="delete-rider">Elimina</button>
                                     <a class="btn btn-sm btn-warning mt-2 mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi Consegna</a>
                                     
                                 </td>

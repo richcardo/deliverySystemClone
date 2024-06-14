@@ -70,6 +70,7 @@
                                             <option value="{{ $rider->id }}">{{ $rider->name }} - {{ $rider->surname }}</option>
                                         @endforeach
                                     </select>
+                                    @error('rider_id')  <span class="text-danger fs-6">{{ $message }}</span> @enderror
                                 </div>
                                 <div class="mb-3">
                                     <button class="btn-orange fs-4" type="submit">Aggiungi consegna</button>

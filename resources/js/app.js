@@ -80,6 +80,7 @@ function FixHover($value){
     }
 
 var modale= document.getElementById('modale')
+var modaleRider = document.getElementById('modale-rider')
 function displayModale(){
   if(modale.style.display=='none'){
     modale.style.display='block';
@@ -87,6 +88,8 @@ function displayModale(){
     modale.style.display='none'
   }
 }
+
+
 
 var btnDelete = document.getElementById('btn-delete')
 

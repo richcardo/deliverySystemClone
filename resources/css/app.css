@@ -413,10 +413,11 @@ div ul li a {
     top: 100%;
     left: 0%;
     width: 100%;
-    background: var(--bg-white);
+    background: #FFFFFF;
     z-index: 2000;
     border: 1px var(--bg-color) solid;
-    padding: 5%;
+    padding: 5% 10%;
+    padding-right: ;
     transition-duration: display 2s;
 }
 
@@ -469,7 +470,7 @@ div ul li a {
     border-radius: 10px;
     width: max-content;
     position: absolute;
-    top: 10vh;
+    top: 50vh;
     left: 25%;
     z-index: 3000;
 }

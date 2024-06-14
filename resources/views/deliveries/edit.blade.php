@@ -68,6 +68,10 @@
     </div>
 
 </div>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY&callback=initMap&v=weekly"
+      defer
+    ></script>
 
 </x-layout>
 

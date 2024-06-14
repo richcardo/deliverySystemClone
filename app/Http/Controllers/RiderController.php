@@ -32,7 +32,11 @@ class RiderController extends Controller
     }
 
     public function destroy(Rider $rider)
-    {
+    {   
+        foreach($rider->deliveries as $delivery){
+            $delivery->delete();
+        }
+        
         $rider->delete();
 
         return redirect()->back()->with(['success'=>'Rider Eliminato con successo!']);
