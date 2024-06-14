@@ -17,8 +17,23 @@
                             <th class="col"></th>
                         </tr>
                     </thead>
-                    <tbody class="text-orange">
+                    <tbody class="text-orange position-relative">
                         @foreach($riders as $rider)
+                        <div class="mb-3">
+                                <div class="modale" id="modale-rider" style="display: none;">
+                                    <div class="testo1">
+                                        <p>Vuoi Davvero cancellare il Rider ?</p>
+                                    </div>
+                                    <div class="options">
+                                        <button onclick="displayModaleRider()" class="btn btn-sm btn-primary">No!</button>
+                                        <form action="" method="POST" id="form-delete">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger" type="submit">Elimina</button>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
                             <tr class="text-orange\">
                                 <td class="">{{ $rider->name }}</td>
                                 <td class="text-orange">{{ $rider->surname }}</td>
