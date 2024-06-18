@@ -35,7 +35,7 @@
 
                         <nav class="nav">
                             <div>
-                                 <h2>Su stampu delivery system</h2>
+                                 <h2>Su Stampu delivery system</h2>
                             </div>
                             @auth
                             <ul class="ul-user">
@@ -55,14 +55,13 @@
                                         </form>
                                     </li>
                                     @if(auth()->check() && auth()->user()->is_admin)
-                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('admin.index') }}">Menu admin</a></li>
-                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('admin.create') }}">Crea Admin</a></li>
+                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('user.index') }}">Menu admin</a></li>
+                                    <li class="dropdown-item-custom menu-admin-item "><a clasS="text-decoration-none" href="{{ route('user.create') }}">Crea User</a></li>
                                     @endif
                                 </ul>
                             </ul>
                             @else
                             <ul class="ul-register">
-                                <li class="li-register hover "><a class="text-decoration-none" href="/register">Registrati</a></li>
                                 <li class="li-register hover "><a class="text-decoration-none" href="/login">Login</a></li>
                             </ul>
                             @endauth

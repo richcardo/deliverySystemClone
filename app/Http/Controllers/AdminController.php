@@ -10,13 +10,6 @@ use Google\Service\Docs\TableRowStyle;
 
 class AdminController extends Controller
 {
-
-    protected $googleDistanceMatrix;
-
-    public function __construct(GoogleDistanceMatrixService $googleDistanceMatrix)
-    {
-        $this->googleDistanceMatrix = $googleDistanceMatrix;
-    }
     public function index(){
         $users= User::all();
         return view('admin.index', compact('users'));
@@ -24,9 +17,7 @@ class AdminController extends Controller
     
     public function create()
     {
-        $distances = $this->googleDistanceMatrix->getDistanceMatrix(['Via Randaccio 18 Cagliari'], ['Via AntonioFais 14 Cagliari']);
-        dd(($distances['rows'][0]['elements'][0]['distance']['value'])/1000);
-        return view('admin.create');
+        return view('admin.create', ['user'=>'', 'title'=>'Crea Utente']);
     }
 
     public function destroy(User $user)

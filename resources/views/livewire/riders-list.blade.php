@@ -7,14 +7,15 @@
                         <tr>
                             <th class="col">Nome</th>
                             <th class="col">Cognome</th>
-                            <th class="col">Numero di telefono</th>
-                            <th class="col">Mezzo di trasporto</th>
+                            <th class="col">Telefono</th>
+                            <th class="col">Trasporto</th>
                             <th class="col">Rimborso</th>
                             <th class="col">Consegne</th>
                             <th class="col">Totale</th>
                             <th class="col">Distanza percorsa</th>
                             <th class="col"></th>
                             <th class="col"></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody class="text-orange position-relative">
@@ -44,14 +45,13 @@
                                 {{ $rider->deliveries->count() }}
                                 </td>
                                 <td class="text-orange">{{ Number::currency($rider->total , in: 'EUR', locale: 'it') }}</td>
-                                <td>{{ $rider->total_distance }}</td>
+                                <td>{{ round($rider->total_distance,1) }}</td>
                                 <td class=""><a class="btn btn-sm btn-primary " href="{{ route('rider.profile', $rider) }}">Profilo</a></td>
                                 <td class="w-100">
                                     <a class="btn btn-sm btn-secondary me-2" href="{{ route('rider.edit', $rider) }}">modifica</a>
-                                    <button class="btn btn-sm btn-danger uppercased" data-action="{{ route('rider.destroy', $rider ) }}" onclick="displayModaleRider()" id="delete-rider">Elimina</button>
-                                    <a class="btn btn-sm btn-warning mt-2 mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi Consegna</a>
-                                    
+                                    <button class="btn btn-sm btn-danger mt-2 mt-xxl-0  uppercased" data-action="{{ route('rider.destroy', $rider ) }}" onclick="displayModaleRider()" id="delete-rider">Elimina</button>
                                 </td>
+                                <td><a class="btn btn-sm btn-warning mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi Consegna</a></td>
                             </tr>
                         @endforeach
                     </tbody>

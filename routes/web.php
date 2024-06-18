@@ -4,8 +4,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RiderController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\SetLanguageMiddleware;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -37,4 +39,15 @@ Route::get('/riders/research', [RiderController::class, 'research'])->name('ride
 //routes for admin
 Route::get('/admin/list', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/create',[adminController::class, 'create'])->name('admin.create');
-route::DELETE('admin/userDelete/{user}', [AdminController::class, 'destroy'])->name('admin.destroy');
+//routes for user CRUD
+Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
+Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+Route::get('/user/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
+Route::PUT('/user/update/{user}', [UserController::class, 'update'])->name('user.update');
+Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+Route::DELETE('/user/delete/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+//routes for closing counts
+Route::get('/chiudi/conto/{rider}', [RiderController::class, 'closeCount' ])->name('count.closing');
+
+Route::get('/admin/edit/{user}',[UserController::class, 'edit'])->name('admin.edit');
+Route::DELETE('admin/userDelete/{user}', [AdminController::class, 'destroy'])->name('admin.destroy');

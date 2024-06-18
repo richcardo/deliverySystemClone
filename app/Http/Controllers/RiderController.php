@@ -62,6 +62,21 @@ class RiderController extends Controller
         ]);
     }
 
+    public function closeCount(Rider $rider)
+    {
+        $deliveries = $rider->deliveries;
+        //dd($deliveries);
+        $delivery_pos = $deliveries->where('pos', true);
+        $total_pos = 0;
+        foreach($delivery_pos as $delivery){
+            $total_pos+=$delivery->price;
+        }
+        return view('riders.count', [
+            'rider' => $rider,
+            'pos'=> $total_pos,
+        ]);
+    }
+
     public function research(Request $request)
     {
         return Rider::search($request->input('searched'));

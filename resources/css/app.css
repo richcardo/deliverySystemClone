@@ -291,12 +291,12 @@ div ul li a {
 }
 
 .hover-li:hover{
-    background-color:#F3F7EC;
+    background-color:#FFFFFF;
     transition-duration: 1s;
 }
 
 .hover-li.fixed-hover{
-    background-color: var(--bg-white);
+    background-color: #FFFFFF;
     margin-right: 0;
     padding-right: 5%;
     height: 50px;
@@ -399,6 +399,7 @@ div ul li a {
 .padding-custom{
     padding-left: 20%;
     padding-top: 130px;
+    margin: 0;
 }
 
 .ul-user{
@@ -417,7 +418,6 @@ div ul li a {
     z-index: 2000;
     border: 1px var(--bg-color) solid;
     padding: 5% 10%;
-    padding-right: ;
     transition-duration: display 2s;
 }
 
@@ -470,8 +470,6 @@ div ul li a {
     border-radius: 10px;
     width: max-content;
     position: absolute;
-    top: 50vh;
-    left: 25%;
     z-index: 3000;
 }
 
@@ -496,3 +494,4 @@ div ul li a {
     width: 600px;
     margin: 0 auto;
 }
+

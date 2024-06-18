@@ -17,8 +17,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td class="text-start">
-                                    <a class="btn btn-sm btn-secondary" href="{{ route('admin.edit', $user) }}">Modifica</a>
-                                    <form class="d-inline" action=" {{ route('admin.destroy', $user) }}" method="POST">
+                                    <form class="d-inline" action=" {{ route('user.destroy', $user) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-danger" type="submit">Elimina</button>

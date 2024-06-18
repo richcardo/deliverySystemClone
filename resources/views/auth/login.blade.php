@@ -12,7 +12,7 @@
                         @csrf
                         <div class="my-3">
                             <label class="form-label" for="name">Inserisci la mail</label>
-                            <input class="form-control" name="email" id="email" type="email">
+                            <input class="form-control" name="email" id="email" type="email" value="{{ old('email') }}">
                             @error('email')  <span class="text-danger fs-6">{{ $message }}</span> @enderror
                         </div>
                         <div class="my-3">

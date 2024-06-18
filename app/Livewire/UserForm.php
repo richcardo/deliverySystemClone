@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -32,6 +33,13 @@ class UserForm extends Component
         return redirect()->back()->with(['success'=>'Utente creato correttamente']);
     }
 
+    
+    public function edit(User $user)
+    {
+        $this->name = $user->name;
+        $this->email = $user->email;
+
+    }
     public function destroy(User $user){
         $user->delete();
         return redirect()->back()->with(['success'=>'Utente eliminato correttamente']);
