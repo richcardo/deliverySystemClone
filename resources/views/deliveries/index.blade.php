@@ -7,9 +7,9 @@
                                         <div class="mb-3">
                                                 <h3 id="title">Elenco consegne</h3>
                                                 @if(session()->has('success'))
-                                                <div class="alert alert-style-success" role="alert">
-                                                {{ session('success') }}
-                                                </div>
+                                                        <div class="alert alert-style-success" role="alert">
+                                                        {{ session('success') }}
+                                                        </div>
                                                 @endif  
                                         </div>
                                         <table class="table table-custom">
@@ -38,7 +38,11 @@
                                                                 <span class="badge text-bg-danger">No</span>
                                                                 @endif
                                                         </td>
-                                                        <td class="text-orange "><a class="text-decoration-none text-orange" href="{{ route('rider.profile', $delivery->rider->id) }}">{{ $delivery->rider->name }} {{ $delivery->rider->surname }}</a></td>
+                                                        @if(isset($delivery->rider))
+                                                        <td class="text-orange "><a class="text-decoration-none text-orange" href="{{ route('rider.profile', $delivery->rider->id) }}">{{ $delivery->rider->name }} {{ $delivery->rider->surname }} </a></td>
+                                                        @else
+                                                        <td>Da Assegnare</td>
+                                                        @endif
 
                                                         
                                                         <td>{{ $delivery->number }}</td>
@@ -55,6 +59,14 @@
                                                 @endforeach
                                         </tbody>
                                         </table>
+                                        <div class="mb-3">
+                                                <form action="{{ route('delivery.destroy.all') }}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger" type="submit">Elimina tutte le consegne</button>
+                                                </form>
+                                                
+                                        </div>
                                 </div>
                         </div>
                 </div>

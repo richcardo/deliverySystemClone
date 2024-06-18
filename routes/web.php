@@ -29,7 +29,8 @@ Route::get('/deliveries/create/{rider}', [DeliveryController::class, 'createDeli
 Route::POST('/deliveries/store/{condition}', [DeliveryController::class, 'store'])->name('delivery.store')->middleware('auth');
 Route::get('/deliveries/{delivery}/edit/{condition}/{rider}', [DeliveryController::class, 'edit'])->name('delivery.edit')->middleware('auth');;
 Route::PUT('deliveries/{delivery}/update/{condition}/{rider2}', [DeliveryController::class, 'update'])->name('delivery.update')->middleware('auth');;
-Route::DELETE('deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy')->middleware('auth');;
+Route::DELETE('/deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy')->middleware('auth');;
+Route::DELETE('/deliveries/destroy/all', [DeliveryController::class,'destroyAll'])->name('delivery.destroy.all');
 
 Route::POST('language/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale')->middleware('setLanguage');
 

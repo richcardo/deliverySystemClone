@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 mt-5">
-                <div class="card p-3">
+                <div class="card shadow-sm p-3">
                     <div class="mb-2">
                         <a class="btn btn-sm btn-secondary w-25"
                             href="{{ route('rider.profile', $rider) }}">Indietro</a>

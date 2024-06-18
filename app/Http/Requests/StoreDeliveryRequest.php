@@ -25,7 +25,6 @@ class StoreDeliveryRequest extends FormRequest
             'name'=>'required',
             'address' => 'required',
             'price'=>'required',
-            'rider_id' =>'required'
         ];
     }
 }

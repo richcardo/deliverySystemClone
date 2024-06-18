@@ -53,7 +53,7 @@
                                     <label for="rider_id" class="label-form">Modifica rider (Non obbligatorio)</label>
                                     <select class="form-select" name="rider_id" id="rider_id">
                                         @foreach($riders as $rider)
-                                            <option @if($delivery->rider->id == $rider->id) selected @endif value="{{ $rider->id }}">{{ $rider->name }} - {{ $rider->surname }}</option>
+                                            <option @if(isset($delivery->rider->id)) @if($delivery->rider->id == $rider->id) selected @endif @endif value="{{ $rider->id }}">{{ $rider->name }} - {{ $rider->surname }}</option>
                                         @endforeach
                                     </select>
                                 </div>

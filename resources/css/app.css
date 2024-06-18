@@ -363,7 +363,7 @@ div ul li a {
 }
 
 .table-custom{
-    font-size: 12px;
+    font-size: 14px;
     height: 50vh;
     border: var(--bg-color) 1px solid;
     outline: auto;
