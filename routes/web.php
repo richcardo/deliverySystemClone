@@ -52,3 +52,4 @@ Route::get('/chiudi/conto/{rider}', [RiderController::class, 'closeCount' ])->na
 
 Route::get('/admin/edit/{user}',[UserController::class, 'edit'])->name('admin.edit');
 Route::DELETE('admin/userDelete/{user}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::get('/statistics',[PageController::class, 'statistics'])->name('statistic');

@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
     <div class="row justify-content-start">
-        <div class="col-12">
+        <div class="col-10 col-sm-10 col-md-10">
                 <table class="table table-custom">
                     <thead>
                         <tr>
@@ -41,11 +41,11 @@
                                 <td>{{ $rider->number }}</td>
                                 <td class="text-orange">{{ $rider->transport }}</td>
                                 <td>{{ Number::currency($rider->fuel , in: 'EUR', locale: 'it') }}</td>
-                                <td class="">
+                                <td class="text-orange">
                                 {{ $rider->deliveries->count() }}
                                 </td>
-                                <td class="text-orange">{{ Number::currency($rider->total , in: 'EUR', locale: 'it') }}</td>
-                                <td>{{ round($rider->total_distance,1) }}</td>
+                                <td >{{ Number::currency($rider->total , in: 'EUR', locale: 'it') }}</td>
+                                <td class="text-orange">{{ round($rider->total_distance,1) }} Km</td>
                                 <td class=""><a class="btn btn-sm btn-primary " href="{{ route('rider.profile', $rider) }}">Profilo</a></td>
                                 <td class="w-100">
                                     <a class="btn btn-sm btn-secondary me-2" href="{{ route('rider.edit', $rider) }}">modifica</a>

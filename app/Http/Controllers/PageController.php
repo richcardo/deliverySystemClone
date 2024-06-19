@@ -37,6 +37,28 @@ class PageController extends Controller
     );
     }
 
+    public function statistics()
+    {
+        $riders= Rider::all();
+        $rider = Rider::orderByDesc('total_distance')->first();
+        $distance = $rider->total_distance;
 
+        $most_deliveries = $rider->deliveries->count();
+        $rider_most_deliveries = $rider->name;
+        foreach($riders as $rider1){
+            if($rider1->deliveries->count() > $most_deliveries){
+                $most_deliveries = $rider1->deliveries->count();
+                $rider_most_deliveries = $rider1->name;
+            }
+        }
+
+
+        return view('statistic',[
+            'rider' => $rider->name,
+            'distance' => $distance,
+            'rider_most_deliveries' => $rider_most_deliveries,
+            'most_deliveries' => $most_deliveries,
+        ]);
+    }
     
 }

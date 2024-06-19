@@ -71,9 +71,30 @@ class RiderController extends Controller
         foreach($delivery_pos as $delivery){
             $total_pos+=$delivery->price;
         }
+        //metodo per calcolare la maggiore distanza ed il rider che l'ha percorsa
+        /*Assegno la prima distanza come la maggiore e anche il primo rider come quello che ha percorso la maggior distanza
+        $first_distance= Rider::all()->first()->total_distance;
+        $riders = Rider::all();
+        $rider_own_biggest_distance = Rider::all()->first();
+        $biggest_distance = $first_distance;
+        //confronto la distanza con le distanze percorse dagli altri rider
+        foreach($riders as $rider1){
+            if($rider1->total_distance>$biggest_distance){
+                $biggest_distance = $rider1->total_distance;
+                $rider_own_biggest_distance = $rider1;
+            }
+        }
+        */
+        //return
+        //prova con desc->funziona
+        $filter_rider = Rider::orderBy('total_distance','desc')->first();
+        $distance_b = $filter_rider->total_distance;
         return view('riders.count', [
             'rider' => $rider,
             'pos'=> $total_pos,
+            'filter_rider' => $filter_rider,
+            'distance_b'=>$distance_b,
+
         ]);
     }
 

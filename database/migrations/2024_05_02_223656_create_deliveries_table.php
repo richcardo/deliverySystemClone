@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('address');
-            $table->string('number');
+            $table->string('number')->nullable();
             $table->float('price');
             $table->boolean('pos')->nullable();
             $table->unsignedBigInteger('rider_id')->nullable();

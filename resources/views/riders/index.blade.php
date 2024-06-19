@@ -2,9 +2,9 @@
 
 <div class="container">
 
-    <div class="row justify-content-start px-0 w-100">
+    <div class="row justify-content-center px-0 w-100">
             
-        <div class="col-12 col-sm-12 col-md-12 m-5 ">
+        <div class="col-10 col-sm-10 col-md-10 m-5 ">
         
             <div class="mb-5">
                 <h3 id="title">I tuoi Rider</h3>
