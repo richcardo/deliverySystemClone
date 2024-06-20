@@ -1,5 +1,5 @@
 <x-layout>
-<div class="container-fluid">
+<div class="container">
         <div class="row justify-content-start px-0">
                 <div class="col-10 col-sm-10 col-md-10 m-5">
                         <div class="container">
@@ -12,8 +12,8 @@
                                                         </div>
                                                 @endif  
                                         </div>
-                                        <table class="table table-custom">
-                                        <thead>
+                                        <table class="table-custom table">
+                                        <thead class="ps-5">
                                                 <tr>
                                                 <th class="col">Indirizzo</th>
                                                 <th class="col">Nome</th>
@@ -25,10 +25,10 @@
                                                 <th class="col"></th>
                                                 </tr>
                                         </thead>
-                                        <tbody class="text-orange">
+                                        <tbody class="ps-5">
                                                 @foreach($deliveries as $delivery)
-                                                <tr class="text-orange">
-                                                        <td class="text-orange">{{ $delivery->address}}</td>
+                                                <tr class="text-orange ">
+                                                        <td class="text-orange pe-5">{{ $delivery->address}}</td>
                                                         <td>{{ $delivery->name }}</td>
                                                         <td>{{ Number::currency($delivery->price , in: 'EUR', locale: 'it') }}</td>
                                                         <td>

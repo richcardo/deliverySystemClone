@@ -1,7 +1,7 @@
 
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-start">
-        <div class="col-10 col-sm-10 col-md-10">
+        <div class="col-9 col-sm-9 col-md-9">
                 <table class="table table-custom">
                     <thead>
                         <tr>
@@ -15,7 +15,7 @@
                             <th class="col">Distanza percorsa</th>
                             <th class="col"></th>
                             <th class="col"></th>
-                            <th></th>
+                            <th class="col"></th>
                         </tr>
                     </thead>
                     <tbody class="text-orange position-relative">
@@ -49,7 +49,7 @@
                                 <td class=""><a class="btn btn-sm btn-primary " href="{{ route('rider.profile', $rider) }}">Profilo</a></td>
                                 <td class="w-100">
                                     <a class="btn btn-sm btn-secondary me-2" href="{{ route('rider.edit', $rider) }}">modifica</a>
-                                    <button class="btn btn-sm btn-danger mt-2 mt-xxl-0  uppercased" data-action="{{ route('rider.destroy', $rider ) }}" onclick="displayModaleRider()" id="delete-rider">Elimina</button>
+                                    <button class="btn btn-sm btn-danger mt-2 mt-xxl-2  uppercased" data-action="{{ route('rider.destroy', $rider ) }}" onclick="displayModaleRider()" id="delete-rider">Elimina</button>
                                 </td>
                                 <td><a class="btn btn-sm btn-warning mt-xxl-0" href="{{ route('delivery.rider.create', $rider)}}">Aggiungi Consegna</a></td>
                             </tr>

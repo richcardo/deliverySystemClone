@@ -71,7 +71,7 @@
                             <a href="{{ route('delivery.create') }}" class="nav-2-a">Crea una Consegna</a>
                             <a href="{{ route('delivery.search') }}" class="nav-2-a">Cerca Consegne</a>
                         </div>
-                        <div class="padding-custom">
+                        <div class="padding-custom container">
                             {{ $slot }}
                         </div>
                         

@@ -4,9 +4,9 @@
 
     <div class="row justify-content-center px-0 w-100">
             
-        <div class="col-10 col-sm-10 col-md-10 m-5 ">
+        <div class="col-10 col-sm-10 col-md-10 mt-5 ">
         
-            <div class="mb-5">
+            <div class="mb-2">
                 <h3 id="title">I tuoi Rider</h3>
                 @if(session()->has('success'))
                     <div class="alert alert-style-success" role="alert">

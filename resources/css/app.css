@@ -16,7 +16,7 @@ body {
     margin: 0px;
     text-transform: uppercase;
     background-color: #FFFFFF;
-    color:var(--bg-color);
+
     font-family: "Cabin", sans-serif;
     font-weight: 400;
     max-height: 100vh;
@@ -82,6 +82,7 @@ nav {
   z-index: 1000;
   position: fixed;
   top: 0;
+  color: #f29101;
 
 }
 
@@ -365,9 +366,19 @@ div ul li a {
 .table-custom{
     font-size: 14px;
     height: 50vh;
-    border: var(--bg-color) 1px solid;
-    outline: auto;
-    padding: 5% 1%;
+    border: var(--bg-color) 2px solid;
+    padding: 10px;
+    width: 100%;
+   
+}
+
+@media screen and (max-width:576px) {
+    .table-custom{
+        font-size: 9px;
+        height: 50vh;
+        border: var(--bg-color) 1px solid;
+        padding: 5% 1%;
+    }
 }
 
 .align-content-center-c{
