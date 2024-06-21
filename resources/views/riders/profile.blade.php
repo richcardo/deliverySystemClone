@@ -1,21 +1,9 @@
 <x-layout>
     <div class="container-fluid m-0">
-        <div class="modale" id="modale" style="display: none;">
-            <div class="testo1">
-                <p>Vuoi Davvero cancellare la consegna?</p>
-            </div>
-            <div class="options">
-                <button onclick="displayModale()" class="btn btn-sm btn-primary">No!</button>
-                <form action="" method="POST" id="form-delete">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-sm btn-danger" type="submit">Elimina</button>
-                </form>
-            </div>
-        </div>
+
         <div class="modale" id="modale-rider" style="display: none;">
             <div class="testo1">
-                <p>Vuoi Davvero cancellare il Rider ?</p>
+                <p class="text-orange">Vuoi Davvero cancellare il Rider ?</p>
             </div>
             <div class="options">
                 <button onclick="displayModaleRider()" class="btn btn-sm btn-primary">No!</button>
@@ -65,7 +53,26 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach($rider->deliveries as $delivery)
-                                                        <tr>
+
+                                                        <tr class="position-relative
+                                                        ">
+                                                            <div class="modale" id="modale" style="display: none;">
+                                                                <div class="testo1">
+                                                                    <p class="text-orange">Vuoi Davvero cancellare la
+                                                                        consegna?
+                                                                    </p>
+                                                                </div>
+                                                                <div class="options">
+                                                                    <button onclick="displayModale()"
+                                                                        class="btn btn-sm btn-primary">No!</button>
+                                                                    <form action="" method="POST" id="form-delete">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <button class="btn btn-sm btn-danger"
+                                                                            type="submit">Elimina</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
                                                             <td class="text-orange">{{ $delivery->address }}</td>
                                                             <td>{{ $delivery->name }}</td>
                                                             <td class="text-orange">

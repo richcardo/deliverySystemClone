@@ -123,7 +123,7 @@ function displayModale(){
 
 
 var btnsDelete = document.querySelectorAll('#btn-delete')
-var deleteForm =document.getElementById('form-delete')
+var deleteForm = document.getElementById('form-delete')
 
 if(btnsDelete){
   for (let btnDelete of btnsDelete){

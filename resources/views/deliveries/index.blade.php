@@ -70,8 +70,46 @@
                                 </div>
                         </div>
                 </div>
+                <div class="col-12 m-5">
+
+                <div class="mb-2 w-25">
+                                <div class="mb-2">
+                                        <label for="" class="form-label">Indirizzo</label>
+                                        <input class="form-control d-inline" type="text" id="address">
+                                </div>
+                                
+                                <div class="mb-2">
+                                <button onclick="search()" class=" d-inline btn-orange">Cerca</button>  
+                                </div>
+                </div>
+        
+                <iframe
+                id="map"
+                width="800"
+                height="500"
+                style="border:0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY
+                &q=Via+Randaccio+18+Cagliari/+/Via+Antonio+Fais+14+Cagliari">
+                </iframe>
+                </div>
         </div>
 </div>
-
-
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY&loading=async&callback=initMap">
+</script>
+<script>
+        const iframe = document.getElementById('map')
+        let destination = document.getElementById('address');
+        let url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY"
+                "&q=`${destination}`"
+        console.log(iframe.src)
+        function search(){
+                let address = destination.value;
+                iframe.src=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY
+                &q=${address}`
+        }
+</script>
 </x-layout>

@@ -479,8 +479,9 @@ div ul li a {
     align-items: center;
     padding: 2% 10%;
     border-radius: 10px;
+    position:absolute;
+    top: 50%;
     width: max-content;
-    position: absolute;
     z-index: 3000;
 }
 
@@ -506,3 +507,7 @@ div ul li a {
     margin: 0 auto;
 }
 
+#map {
+    height: 500px;
+    width: 800px;
+}

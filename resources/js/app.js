@@ -100,7 +100,7 @@ for (let i of btnDelete){
 }
 
 function success(position){
-  const crd =position.coords;
+  const crd = position.coords;
   console.log(`Your current Position is Latitude : ${crd.latitude}, Longitude : ${crd.longitude}`)
 }
 
