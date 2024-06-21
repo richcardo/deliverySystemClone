@@ -325,7 +325,8 @@ div ul li a {
     align-content: center;
     align-items: center;
     min-height:90px;
-    width: 100%;
+    width: 100vw;
+    margin: 0;
 }
 
 .nav-2{

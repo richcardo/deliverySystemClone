@@ -34,7 +34,7 @@ class MakeAdmin extends Command
         $user->update([
             'is_admin'=>true,
         ]);
-        $this->info(('L\'utente {$user->name} è ora Amministratore' ));
+        $this->info(('L\'utente ' . $user->name .  ' è ora Amministratore' ));
 
         
     }
