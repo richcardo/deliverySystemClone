@@ -14,7 +14,7 @@
 <body>
 <div class="container-fluid" >
         <div class="row">
-                <div class="col-2 col-sm-2 bg-nero menu-custom">
+                <div class="d-none d-sm-block col-sm-2 bg-nero menu-custom">
                     <div class="row">
                         <div class="col-12">
                             <div class="">
@@ -71,7 +71,7 @@
                             <a href="{{ route('delivery.create') }}" class="nav-2-a">Crea una Consegna</a>
                             <a href="{{ route('delivery.search') }}" class="nav-2-a">Cerca Consegne</a>
                         </div>
-                        <div class="padding-custom container">
+                        <div class="padding-custom container-fluid">
                             {{ $slot }}
                         </div>
                         

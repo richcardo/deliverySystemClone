@@ -378,6 +378,10 @@ div ul li a {
         height: 50vh;
         border: var(--bg-color) 1px solid;
         padding: 5% 1%;
+        margin: auto;
+    }
+    body{
+        width: 100vw;
     }
 }
 

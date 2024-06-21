@@ -1,6 +1,6 @@
 <x-layout>
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="row justify-content-center px-0 w-100">
             
