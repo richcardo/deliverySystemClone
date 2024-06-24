@@ -413,9 +413,19 @@ div ul li a {
 }
 
 .padding-custom{
+
     padding-left: 20%;
     padding-top: 130px;
     margin: 0;
+}
+
+@media screen and (max-width: 576px) {
+    .padding-custom{
+        padding-left: 0;
+        padding-top: 130px;
+        margin: 0;
+    }
+    
 }
 
 .ul-user{

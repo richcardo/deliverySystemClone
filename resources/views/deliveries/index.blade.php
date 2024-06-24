@@ -1,9 +1,9 @@
 <x-layout>
 <div class="container">
         <div class="row justify-content-start px-0">
-                <div class="col-10 col-sm-10 col-md-10 m-5">
+                <div class="col-12 col-sm-10 col-md-10 m-5">
                         <div class="container">
-                                <div class="row justify-content-start">
+                                <div class="row d-none d-sm-block justify-content-start">
                                         <div class="mb-3">
                                                 <h3 id="title">Elenco consegne</h3>
                                                 @if(session()->has('success'))
@@ -52,7 +52,7 @@
                                                                 <form class="d-inline" action="{{ route('delivery.destroy', $delivery ) }}" method="POST">
                                                                         @csrf
                                                                         @method('DELETE')
-                                                                        <button class="btn btn-sm btn-danger uppercased" type="submit">elimina</button>
+                                                                        <button class="btn btn-sm btn-danger uppercased mt-2 mt-xxl-0" type="submit">elimina</button>
                                                                 </form>
                                                         </td>
                                                 </tr>
@@ -67,6 +67,43 @@
                                                 </form>
                                                 
                                         </div>
+                                </div>
+                                <div class="row d-block d-sm-none justify-content-start">
+                                        @foreach($deliveries as $delivery)
+                                                <div class="card shadow-sm p-3">
+                                                        <h5>{{ $delivery->address }}</h5> 
+                                                        <p>{{ $delivery->number }}</p>
+                                                       <div class="mb-3">
+                                                                <p>{{ Number::currency($delivery->price , in: 'EUR', locale: 'it') }}</p>
+                                                                @if($delivery->rider)
+                                                                        <p>{{ $delivery->rider }}</p>
+                                                                @else
+                                                                        <p>Rider Non assegnato</p>
+                                                                @endif
+
+                                                                <div id="pos" class="border p-2">
+                                                                                <p class="d-inline me-3">Pos:  </p>
+                                                                        @if($delivery->pos)
+                                                                                <span class="badge text-bg-success m-0">Si</span>
+                                                                        @else
+                                                                                <span class="badge text-bg-danger mb-2">No</span>
+                                                                        @endif
+
+                                                                                <p>Distanza : {{ round($delivery->distance,2) }} Km</p>
+                                                                </div>
+                                                                <div class="my-2">
+                                                                        <a class="btn btn-sm btn-secondary" href="{{ route('delivery.edit', ['delivery' => $delivery , 'condition'=>'delivery', 'rider'=> 0]) }}">Modifica</a>
+                                                                <form class="d-inline " action="{{ route('delivery.destroy', $delivery) }}" method="post">
+                                                                 @csrf
+                                                                 @method('DELETE')
+                                                                 <button class="btn btn-sm btn-danger " type="submit">Elimina</button>       
+                                                                
+                                                                </form>
+                                                                </div>
+                                                                
+                                                        </div>
+                                                </div>
+                                        @endforeach
                                 </div>
                         </div>
                 </div>
