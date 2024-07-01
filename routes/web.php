@@ -16,6 +16,7 @@ Route::get('/home', [Pagecontroller::class, 'home'])->name('home');
 
 Route::get('/riders/menu', [PageController::class, 'menu'])->name('riders.menu')->middleware('auth');
 Route::get('riders/menu/create', [PageController::class,'create'])->name('riders.create')->middleware('auth');
+Route::PUT('riders/store', [PageController::class, 'store'])->name('riders.store')->middleware('auth');
 Route::get('riders/menu/index',[PageController::class, 'index'])->name('riders.index')->middleware('auth');
 Route::get('/riders/menu/{rider}/edit' , [RiderController::class, 'edit'])->name('rider.edit')->middleware('auth');
 Route::PUT('/riders/menu/{rider}/update', [RiderController::class, 'update'])->name('rider.update')->middleware('auth');
@@ -32,10 +33,7 @@ Route::PUT('deliveries/{delivery}/update/{condition}/{rider2}', [DeliveryControl
 Route::DELETE('/deliveries/{delivery}/delete', [DeliveryController::class, 'destroy'])->name('delivery.destroy')->middleware('auth');;
 Route::DELETE('/deliveries/destroy/all', [DeliveryController::class,'destroyAll'])->name('delivery.destroy.all');
 
-Route::POST('language/{lang}', [PageController::class, 'setLanguage'])->name('set_language_locale')->middleware('setLanguage');
 
-//route for searchables 
-Route::get('/riders/research', [RiderController::class, 'research'])->name('riders.research');
 
 //routes for admin
 Route::get('/admin/list', [AdminController::class, 'index'])->name('admin.index');

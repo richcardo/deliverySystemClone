@@ -8,6 +8,7 @@ use App\Models\Rider;
 
 class RiderController extends Controller
 {
+
     public function edit(Rider $rider)
     {
         return view('riders.edit', [

@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 mt-5">
@@ -10,6 +10,8 @@
 
                     <h4>Stai chiudendo il conto di <span class="text-orange">{{ $rider->name }}
                             {{ $rider->surname }}</span></h4>
+
+                            <p>Rimborso : {{  Number::currency($rider->fuel, in: 'EUR', locale: 'de') }}</p>
                     <div class="my-3">
                         <table class="table">
                             <thead>
@@ -25,7 +27,7 @@
                                     <tr>
                                         <td>{{ $delivery->address }}</td>
                                         <td>{{ $delivery->name }}</td>
-                                        <td>{{ $delivery->price }}</td>
+                                        <td>{{ Number::currency($delivery->price, in: 'EUR', locale: 'de') }}</td>
                                         <td>
                                             @if($delivery->pos)
                                                 <span class="badge text-bg-success ">SI</span>
@@ -51,4 +53,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-layout2>

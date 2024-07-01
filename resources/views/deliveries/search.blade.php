@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
 <div class="container-fluid">
         <div class="row justify-content-start height-100vh">
                 <div class="col-10 col-sm-10 col-md-10 m-5">
@@ -15,4 +15,4 @@
 </div>
 
 
-</x-layout>
+</x-layout2>

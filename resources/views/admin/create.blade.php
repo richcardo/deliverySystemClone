@@ -1,4 +1,4 @@
-<x-layout 
+<x-layout2 
 :user="$user"
 :title="$title"                        
 >
@@ -9,4 +9,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-layout2>

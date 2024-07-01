@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
 
 <div class="container-fluid">
     <div class="row justify-content-start px-0">
@@ -81,16 +81,9 @@
                     </div>
             </div>
             <div class="col-12">
-            <div id="map"></div>
 
-            </div>
     </div>
 
 </div>
 
-<!-- prettier-ignore -->
-<script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFulwjF58N_YdFzIQJ6Dx-xySIkT_ZTXY&callback=initMap&v=weekly"
-      defer
-    ></script>
-</x-layout>
+</x-layout2>

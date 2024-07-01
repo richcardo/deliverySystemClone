@@ -1,7 +1,13 @@
-<x-layout>
+<x-layout2>
     <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <a class="text-black" href="{{ route('user.index') }}">Users</a>
+            </div>
+        </div>
         <div class="row justify-content-start pt-4">
             <div class="col-6">
+                
                 <h3>Crea un Utente</h3>
                 @if(session()->has('success'))
                     <div class="alert alert-style-success" role="alert">
@@ -35,4 +41,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-layout2>

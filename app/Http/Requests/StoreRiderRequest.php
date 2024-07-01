@@ -24,6 +24,9 @@ class StoreRiderRequest extends FormRequest
         return [
             'name'=>'required',
             'surname'=>'required',
+            'fuel'=>'required', 
+            'transport' => 'required',
+
         ];
     }
 }

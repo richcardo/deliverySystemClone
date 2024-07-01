@@ -1,4 +1,4 @@
-<x-layout title="Registrazione">
+<x-layout2 title="Registrazione">
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-lg-10 mt-4">
@@ -42,4 +42,4 @@
 
    
 
-</x-layout>
+</x-layout2>

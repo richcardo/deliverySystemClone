@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
     <div class="container">
         <div class="row justify-content-start pt-4">
             <div class="col-6">
@@ -36,4 +36,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-layout2>

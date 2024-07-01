@@ -1,6 +1,6 @@
-<div class="container">
+
     <div class="row justify-content-start">
-        <div class="col-9 col-sm-9 col-md-9">
+        <div class="col-8 col-sm-8 col-md-8">
             <table class="table table-custom">
                 <thead>
                     <tr>
@@ -62,4 +62,3 @@
             </table>
         </div>
     </div>
-</div>

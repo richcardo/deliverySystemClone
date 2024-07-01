@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
     <div class="container-fluid m-0">
 
         <div class="modale" id="modale-rider" style="display: none;">
@@ -91,7 +91,8 @@
                                                             <td class="w-50 text-end">
                                                                 <a class="btn btn-secondary btn-sm "
                                                                     href="{{ route('delivery.edit', ['delivery' => $delivery, 'condition' => 'rider', 'rider' => $rider]) }}">Modifica</a>
-                                                                <button onclick="displayModale()"
+                                                                
+                                                                    <button onclick="displayModale()"
                                                                     class="btn btn-danger btn-sm d-inline "
                                                                     data-action="{{ route('delivery.destroy', $delivery) }}"
                                                                     id="btn-delete">ELIMINA</button>
@@ -115,8 +116,9 @@
                                                         {{ round($rider->total_distance, 1) }} Km
                                                     </p>
                                                 </h3>
+                                                <h3>Consegne : <span class="text-black">{{ $rider->deliveries->count() }}</span></h3>
                                             </div>
-                                            <div class="containerr">
+                                            <div class="container">
                                                 <div class="row justify-content-between">
                                                     <div class="col-6">
                                                         <div class="mb-2">
@@ -147,4 +149,4 @@
     </div>
 
 
-</x-layout>
+</x-layout2>

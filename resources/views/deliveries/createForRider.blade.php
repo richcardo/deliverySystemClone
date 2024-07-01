@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout2>
 <div class="container-fluid">
     <class="row justify-content-start px-0">
             <div class="col-12 col-sm-6 col-md-6 m-3">
@@ -79,4 +79,4 @@
       defer
     ></script>
 
-</x-layout>
+</x-layout2>
